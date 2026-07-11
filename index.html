@@ -1,191 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepak Dabi Auto Service</title>
+
+<title>Deepak Dabi Auto Service Jodhpur</title>
 
 <style>
+
 *{
-margin:0;
-padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(to bottom,#ffb300,#ff9800);
-overflow:hidden;
-height:100vh;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f2f2f2;
+text-align:center;
 }
 
+
+/* Header */
+
 .header{
-text-align:center;
-padding:20px;
-color:#fff;
+background:linear-gradient(45deg,#ff9800,#ffd54f);
+padding:25px 10px;
 }
 
 .header h1{
-font-size:40px;
+font-size:38px;
+margin:5px;
+}
+
+.phone{
+font-size:25px;
 font-weight:bold;
+color:green;
 }
 
 .header p{
-font-size:20px;
-margin-top:10px;
+font-size:18px;
 }
 
-.buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:15px;
+
+/* Hero */
+
+.hero{
+background:white;
+padding:25px 10px;
 }
+
+
+.hero img{
+
+width:95%;
+max-width:500px;
+border-radius:20px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+
+animation:autoMove 3s infinite alternate;
+
+}
+
+
+@keyframes autoMove{
+
+from{
+transform:translateX(-20px);
+}
+
+to{
+transform:translateX(20px);
+}
+
+}
+
+
+
+/* Buttons */
+
 
 .btn{
-padding:12px 25px;
-border:none;
-border-radius:10px;
-font-size:18px;
+
+display:inline-block;
+
+padding:15px 25px;
+
+margin:15px 5px;
+
+border-radius:50px;
+
+font-size:20px;
+
 font-weight:bold;
-cursor:pointer;
-text-decoration:none;
+
 color:white;
+
+text-decoration:none;
+
 }
+
 
 .call{
+
 background:#2196f3;
+
 }
+
 
 .whatsapp{
-background:#25D366;
+
+background:#25d366;
+
 }
 
-.sky{
-position:absolute;
-width:100%;
-height:75%;
-background:linear-gradient(#87CEEB,#E0F7FA);
+
+
+/* Services */
+
+
+.services{
+
+padding:20px;
+
 }
 
-.cloud{
-position:absolute;
-width:120px;
-height:60px;
+
+.card{
+
 background:white;
+
+max-width:600px;
+
+margin:15px auto;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+font-size:18px;
+
+}
+
+
+/* Map */
+
+.map iframe{
+
+width:95%;
+
+height:300px;
+
+border:0;
+
+border-radius:15px;
+
+}
+
+
+/* Floating WhatsApp */
+
+
+.float{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+background:#25d366;
+
+color:white;
+
+padding:15px 22px;
+
 border-radius:50px;
-animation:cloudmove 30s linear infinite;
+
+font-size:18px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+box-shadow:0 5px 15px #777;
+
 }
 
-.cloud:nth-child(1){
-top:50px;
-left:-150px;
-}
 
-.cloud:nth-child(2){
-top:120px;
-left:-300px;
-animation-duration:40s;
-}
 
-@keyframes cloudmove{
-from{transform:translateX(0);}
-to{transform:translateX(1600px);}
-}
+/* Footer */
 
-.auto{
-position:absolute;
-bottom:120px;
-width:350px;
-animation:drive 12s linear infinite;
-}
-
-.auto img{
-width:100%;
-filter:drop-shadow(0px 10px 20px rgba(0,0,0,.5));
-}
-
-@keyframes drive{
-0%{
-left:-400px;
-}
-100%{
-left:100%;
-}
-}
-
-.road{
-position:absolute;
-bottom:0;
-width:100%;
-height:120px;
-background:#333;
-}
-
-.road:before{
-content:"";
-position:absolute;
-top:55px;
-width:100%;
-height:8px;
-background:repeating-linear-gradient(
-to right,
-white 0px,
-white 50px,
-transparent 50px,
-transparent 100px
-);
-animation:roadmove 1s linear infinite;
-}
-
-@keyframes roadmove{
-from{
-background-position:0;
-}
-to{
-background-position:-100px;
-}
-}
 
 .footer{
-position:absolute;
-bottom:130px;
-width:100%;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-color:#fff;
-text-shadow:2px 2px 5px black;
+
+background:#222;
+
+color:white;
+
+padding:20px;
+
+margin-top:20px;
+
 }
+
+
 </style>
 
 </head>
+
+
 <body>
 
-<div class="sky">
-<div class="cloud"></div>
-<div class="cloud"></div>
-</div>
 
 <div class="header">
-<h1>🚕 Deepak Dabi Auto Service</h1>
-<p>24x7 Auto Booking Service - Jodhpur</p>
 
-<div class="buttons">
-<a href="tel:9521393991" class="btn call">📞 Call Now</a>
-<a href="https://wa.me/919521393991" class="btn whatsapp">💬 WhatsApp</a>
+<h1>🚖 Deepak Dabi Auto Service</h1>
+
+<div class="phone">
+📞 9521393991
 </div>
+
+<p>
+24x7 Auto Booking Service - Jodhpur
+</p>
+
 </div>
+
+
+
+<div class="hero">
+
+
+<img src="auto.jpg" alt="TVS King EV Auto">
+
+
+<br>
+
+
+<a class="btn call" href="tel:9521393991">
+📞 Call Now
+</a>
+
+
+<a class="btn whatsapp"
+href="https://wa.me/919521393991?text=Hello%20Deepak%20Dabi%20Auto%20Service">
+💬 WhatsApp Booking
+</a>
+
+
+</div>
+
+
+
+
+<div class="services">
+
+
+<h2>🚕 हमारी सेवाएँ</h2>
+
+
+<div class="card">
+
+<h3>🚉 Railway Station</h3>
+
+<p>Pickup & Drop Available</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🚌 Bus Stand</h3>
+
+<p>24x7 Auto Service</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🏥 Hospital Emergency</h3>
+
+<p>Fast Local Ride</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>🛒 Market Ride</h3>
+
+<p>Jodhpur City Local Auto</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>✈ Airport Service</h3>
+
+<p>Pickup & Drop Facility</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="map">
+
+
+<h2>📍 हमारा स्थान</h2>
+
+
+<iframe
+
+src="https://maps.google.com/maps?q=Jodhpur%20Rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed">
+
+</iframe>
+
+
+</div>
+
+
+
 
 <div class="footer">
-Safe • Fast • Affordable Ride
+
+<h3>
+Deepak Dabi Auto Service
+</h3>
+
+<p>
+📍 Jodhpur, Rajasthan
+</p>
+
+<p>
+📞 9521393991
+</p>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+
 </div>
 
-<div class="auto">
-<img src="auto.jpg" alt="Auto">
-</div>
 
-<div class="road"></div>
+
+<a class="float"
+href="https://wa.me/919521393991">
+
+💬 Book Auto
+
+</a>
+
+
 
 </body>
 </html>
