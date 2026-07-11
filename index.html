@@ -3,72 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Deepak Dabi Auto Service</title>
 
-<meta name="description" content="24x7 Auto Booking Service in Jodhpur">
-<meta name="theme-color" content="#ff9800">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
+margin:0;
+font-family:Arial,sans-serif;
 background:#f5f5f5;
-overflow-x:hidden;
-}
-
-header{
-background:linear-gradient(135deg,#ff9800,#ffc107);
-color:#000;
-padding:25px;
 text-align:center;
 }
 
-header h1{
-font-size:40px;
+.header{
+background:linear-gradient(45deg,#ff9800,#ffc107);
+padding:30px 15px;
+color:#000;
 }
 
-header h2{
-margin-top:10px;
-color:#0a8f08;
+.header h1{
+font-size:42px;
+margin:10px 0;
+}
+
+.phone{
+font-size:24px;
+font-weight:bold;
+color:green;
 }
 
 .hero{
-padding:30px 15px;
-text-align:center;
+padding:20px;
 background:white;
 }
 
-.auto-box{
-max-width:500px;
-margin:auto;
-animation:float 3s ease-in-out infinite;
-}
-
-.auto-box img{
+.hero img{
 width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+max-width:500px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0px);}
+.buttons{
+margin-top:20px;
 }
 
 .btn{
 display:inline-block;
 padding:15px 25px;
-margin:8px;
-text-decoration:none;
+margin:10px;
 border-radius:10px;
+text-decoration:none;
+font-size:20px;
 font-weight:bold;
 color:white;
 }
@@ -81,138 +65,65 @@ background:#2196f3;
 background:#25d366;
 }
 
-.section{
-padding:40px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.services{
+padding:30px 15px;
 }
 
 .card{
 background:white;
+margin:15px auto;
+max-width:600px;
 padding:20px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
-.form{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.form input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:8px;
-}
-
-.form button{
-background:#25d366;
-color:white;
-border:none;
-padding:15px 25px;
-border-radius:8px;
-font-size:18px;
-cursor:pointer;
-width:100%;
-}
-
-.map{
-overflow:hidden;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-footer{
+.footer{
 background:#222;
 color:white;
-text-align:center;
-padding:25px;
+padding:20px;
+margin-top:20px;
 }
-
-.floating{
-position:fixed;
-right:20px;
-bottom:20px;
-width:60px;
-height:60px;
-background:#25d366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:28px;
-text-decoration:none;
-color:white;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
 </style>
 </head>
 
 <body>
 
-<header>
-
+<div class="header">
 <h1>🚖 Deepak Dabi Auto Service</h1>
-
-<h2>📞 9521393991</h2>
-
-<p>24×7 Auto Booking Service - Jodhpur</p>
-
-</header>
-
-<section class="hero">
-
-<div class="auto-box">
-
-<img src="auto.jpg" alt="TVS King EV Auto">
-
+<div class="phone">📞 9521393991</div>
+<p>24x7 Auto Booking Service - Jodhpur</p>
 </div>
 
-<br>
+<div class="hero">
+<img src="auto.jpg" alt="TVS King EV Auto">
 
-<a href="tel:9521393991" class="btn call">
-📞 Call Now
-</a>
+<div class="buttons">
+<a class="btn call" href="tel:9521393991">📞 Call Now</a>
 
-<a href="https://wa.me/919521393991" class="btn whatsapp">
+<a class="btn whatsapp"
+href="https://wa.me/919521393991?text=Hello%20Deepak%20Dabi%20Auto%20Service">
 💬 WhatsApp Booking
 </a>
+</div>
+</div>
 
-</section>
-
-<section class="section">
-
-<h2 align="center">हमारी सेवाएँ</h2>
-
-<br>
-
-<div class="cards">
+<div class="services">
+<h2>हमारी सेवाएँ</h2>
 
 <div class="card">
 <h3>🚉 Railway Station</h3>
-<p>Pickup & Drop</p>
+<p>Pickup & Drop Service</p>
 </div>
 
 <div class="card">
 <h3>🚌 Bus Stand</h3>
-<p>Pickup & Drop</p>
+<p>Pickup & Drop Service</p>
 </div>
 
 <div class="card">
 <h3>🏥 Hospital</h3>
-<p>Emergency Ride</p>
+<p>Emergency Ride Available</p>
 </div>
 
 <div class="card">
@@ -220,103 +131,17 @@ box-shadow:0 5px 15px rgba(0,0,0,.3);
 <p>Local City Ride</p>
 </div>
 
+<div class="card">
+<h3>✈ Airport</h3>
+<p>Airport Pickup & Drop</p>
+</div>
 </div>
 
-</section>
-
-<section class="section">
-
-<div class="form">
-
-<h2 align="center">🚖 Auto Booking</h2>
-
-<input type="text" id="name" placeholder="आपका नाम">
-
-<input type="tel" id="mobile" placeholder="मोबाइल नंबर">
-
-<input type="text" id="pickup" placeholder="Pickup Location">
-
-<input type="text" id="drop" placeholder="Drop Location">
-
-<button onclick="bookAuto()">
-WhatsApp पर बुक करें
-</button>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 align="center">📍 हमारी लोकेशन</h2>
-
-<br>
-
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=63J3%2BPPH%20Jodhpur%20Rajasthan&t=&z=15&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="400"
-style="border:0;"
-loading="lazy">
-</iframe>
-
-</div>
-
-</section>
-
-<footer>
-
+<div class="footer">
 <h3>Deepak Dabi Auto Service</h3>
-
-<br>
-
-<p>📞 9521393991</p>
-
 <p>📍 Jodhpur, Rajasthan</p>
-
-<p>🕒 24 Hours Service</p>
-
-</footer>
-
-<a
-href="https://wa.me/919521393991"
-class="floating">
-💬
-</a>
-
-<script>
-
-function bookAuto(){
-
-let name =
-document.getElementById("name").value;
-
-let mobile =
-document.getElementById("mobile").value;
-
-let pickup =
-document.getElementById("pickup").value;
-
-let drop =
-document.getElementById("drop").value;
-
-let message =
-"🚖 AUTO BOOKING%0A%0A"+
-"Name: "+name+"%0A"+
-"Mobile: "+mobile+"%0A"+
-"Pickup: "+pickup+"%0A"+
-"Drop: "+drop;
-
-window.open(
-"https://wa.me/919521393991?text="+message,
-"_blank"
-);
-
-}
-
-</script>
+<p>📞 9521393991</p>
+</div>
 
 </body>
 </html>
