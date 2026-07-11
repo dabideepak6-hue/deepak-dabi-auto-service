@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deepak Dabi Auto Service Jodhpur</title>
+<title>Deepak Dabi Auto Service</title>
 
 <style>
 
-*{
-box-sizing:border-box;
-}
-
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:Arial;
 background:#f2f2f2;
 text-align:center;
 }
 
-
-/* Header */
-
 .header{
 background:linear-gradient(45deg,#ff9800,#ffd54f);
-padding:25px 10px;
+padding:25px;
 }
 
 .header h1{
-font-size:38px;
-margin:5px;
+font-size:35px;
 }
 
 .phone{
@@ -38,33 +31,29 @@ font-weight:bold;
 color:green;
 }
 
-.header p{
-font-size:18px;
-}
-
-
-/* Hero */
-
-.hero{
+.card{
 background:white;
-padding:25px 10px;
+margin:15px auto;
+padding:20px;
+width:90%;
+max-width:600px;
+border-radius:15px;
+box-shadow:0 5px 15px #ccc;
 }
 
 
-.hero img{
+.auto img{
 
 width:95%;
 max-width:500px;
 border-radius:20px;
 
-box-shadow:0 8px 20px rgba(0,0,0,.3);
-
-animation:autoMove 3s infinite alternate;
+animation:move 3s infinite alternate;
 
 }
 
 
-@keyframes autoMove{
+@keyframes move{
 
 from{
 transform:translateX(-20px);
@@ -77,133 +66,51 @@ transform:translateX(20px);
 }
 
 
+input,select{
 
-/* Buttons */
+width:90%;
+padding:12px;
+margin:8px;
+border-radius:10px;
+border:1px solid #ccc;
+
+}
 
 
-.btn{
-
-display:inline-block;
+button,.btn{
 
 padding:15px 25px;
-
-margin:15px 5px;
-
+border:0;
 border-radius:50px;
-
-font-size:20px;
-
-font-weight:bold;
-
+font-size:18px;
 color:white;
-
+margin:8px;
+cursor:pointer;
 text-decoration:none;
 
 }
 
 
 .call{
-
 background:#2196f3;
-
 }
 
 
 .whatsapp{
-
 background:#25d366;
-
 }
 
 
-
-/* Services */
-
-
-.services{
-
-padding:20px;
-
+.pay{
+background:#673ab7;
 }
-
-
-.card{
-
-background:white;
-
-max-width:600px;
-
-margin:15px auto;
-
-padding:20px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-font-size:18px;
-
-}
-
-
-/* Map */
-
-.map iframe{
-
-width:95%;
-
-height:300px;
-
-border:0;
-
-border-radius:15px;
-
-}
-
-
-/* Floating WhatsApp */
-
-
-.float{
-
-position:fixed;
-
-right:20px;
-
-bottom:20px;
-
-background:#25d366;
-
-color:white;
-
-padding:15px 22px;
-
-border-radius:50px;
-
-font-size:18px;
-
-font-weight:bold;
-
-text-decoration:none;
-
-box-shadow:0 5px 15px #777;
-
-}
-
-
-
-/* Footer */
 
 
 .footer{
 
 background:#222;
-
 color:white;
-
 padding:20px;
-
-margin-top:20px;
 
 }
 
@@ -224,70 +131,64 @@ margin-top:20px;
 📞 9521393991
 </div>
 
-<p>
-24x7 Auto Booking Service - Jodhpur
-</p>
+<p>24x7 Auto Booking Service - Jodhpur</p>
 
 </div>
 
 
 
-<div class="hero">
+<div class="card auto">
 
-
-<img src="auto.jpg" alt="TVS King EV Auto">
-
+<img src="auto.jpg" width="100%">
 
 <br>
 
+<a class="btn call"
+href="tel:9521393991">
 
-<a class="btn call" href="tel:9521393991">
 📞 Call Now
+
 </a>
 
 
 <a class="btn whatsapp"
-href="https://wa.me/919521393991?text=Hello%20Deepak%20Dabi%20Auto%20Service">
-💬 WhatsApp Booking
+href="https://wa.me/919521393991">
+
+💬 WhatsApp
+
 </a>
 
-
 </div>
 
 
 
 
-<div class="services">
-
-
-<h2>🚕 हमारी सेवाएँ</h2>
-
-
 <div class="card">
 
-<h3>🚉 Railway Station</h3>
 
-<p>Pickup & Drop Available</p>
-
-</div>
+<h2>🚖 Online Booking</h2>
 
 
-
-<div class="card">
-
-<h3>🚌 Bus Stand</h3>
-
-<p>24x7 Auto Service</p>
-
-</div>
+<input id="name" placeholder="नाम">
 
 
+<input id="mobile" placeholder="मोबाइल नंबर">
 
-<div class="card">
 
-<h3>🏥 Hospital Emergency</h3>
+<input id="pickup" placeholder="Pickup Location">
 
-<p>Fast Local Ride</p>
+
+<input id="drop" placeholder="Drop Location">
+
+
+
+<button onclick="booking()"
+style="background:#25d366">
+
+Confirm Booking
+
+</button>
+
 
 </div>
 
@@ -296,44 +197,119 @@ href="https://wa.me/919521393991?text=Hello%20Deepak%20Dabi%20Auto%20Service">
 
 <div class="card">
 
-<h3>🛒 Market Ride</h3>
 
-<p>Jodhpur City Local Auto</p>
+<h2>💰 Fare Calculator</h2>
+
+
+<input id="km"
+type="number"
+placeholder="Distance KM">
+
+
+<select id="rate">
+
+<option value="20">
+City Ride ₹20/KM
+</option>
+
+
+<option value="30">
+Station ₹30/KM
+</option>
+
+
+<option value="40">
+Airport ₹40/KM
+</option>
+
+</select>
+
+
+<button onclick="fare()"
+style="background:#ff9800">
+
+Calculate Fare
+
+</button>
+
+
+<h3 id="price"></h3>
+
 
 </div>
+
 
 
 
 <div class="card">
 
-<h3>✈ Airport Service</h3>
 
-<p>Pickup & Drop Facility</p>
+<h2>📍 Route</h2>
+
+
+<input id="from"
+placeholder="Pickup">
+
+
+<input id="to"
+placeholder="Drop">
+
+
+<button onclick="map()"
+style="background:#4285F4">
+
+Open Map
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h2>💳 Online Payment</h2>
+
+
+<input id="amount"
+type="number"
+placeholder="Amount ₹">
+
+
+<button onclick="pay()"
+class="pay">
+
+Pay Now
+
+</button>
+
 
 </div>
 
 
 
+
+<div class="card">
+
+
+<h2>🚉 Services</h2>
+
+<p>🚉 Railway Station Pickup</p>
+
+<p>🚌 Bus Stand Ride</p>
+
+<p>🏥 Hospital Emergency</p>
+
+<p>✈ Airport Pickup Drop</p>
+
+<p>🏙 Jodhpur City Ride</p>
+
+
 </div>
 
-
-
-
-
-<div class="map">
-
-
-<h2>📍 हमारा स्थान</h2>
-
-
-<iframe
-
-src="https://maps.google.com/maps?q=Jodhpur%20Rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed">
-
-</iframe>
-
-
-</div>
 
 
 
@@ -345,15 +321,11 @@ Deepak Dabi Auto Service
 </h3>
 
 <p>
-📍 Jodhpur, Rajasthan
+📍 Jodhpur Rajasthan
 </p>
 
 <p>
 📞 9521393991
-</p>
-
-<p>
-© 2026 All Rights Reserved
 </p>
 
 
@@ -361,13 +333,82 @@ Deepak Dabi Auto Service
 
 
 
-<a class="float"
-href="https://wa.me/919521393991">
 
-💬 Book Auto
+<script>
 
-</a>
 
+function booking(){
+
+
+let msg=
+
+"🚖 Auto Booking%0A%0A"+
+"Name: "+name.value+"%0A"+
+"Mobile: "+mobile.value+"%0A"+
+"Pickup: "+pickup.value+"%0A"+
+"Drop: "+drop.value;
+
+
+window.open(
+"https://wa.me/919521393991?text="+msg
+);
+
+}
+
+
+
+
+function fare(){
+
+
+let total=
+km.value * rate.value;
+
+
+price.innerHTML=
+"Estimated Fare ₹ "+total;
+
+
+}
+
+
+
+
+function map(){
+
+
+window.open(
+
+"https://www.google.com/maps/dir/"
++from.value+
+"/"+
+to.value
+
+);
+
+
+}
+
+
+
+
+function pay(){
+
+
+let upi=
+
+"upi://pay?pa=9521393991@kotak&pn=Deepak%20Dabi%20Auto%20Service&am="
++amount.value+
+"&cu=INR";
+
+
+window.location.href=upi;
+
+
+}
+
+
+</script>
 
 
 </body>
