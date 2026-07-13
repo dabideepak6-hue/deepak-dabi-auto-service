@@ -1,388 +1,77 @@
 <!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Deepak Dabi Auto Service</title>
-
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f2f2f2;
-text-align:center;
-}
-
-.header{
-background:linear-gradient(45deg,#ff9800,#ffd54f);
-padding:25px;
-}
-
-.header h1{
-font-size:35px;
-margin:10px;
-}
-
-.phone{
-font-size:25px;
-font-weight:bold;
-color:green;
-}
-
-.card{
-background:white;
-width:90%;
-max-width:600px;
-margin:15px auto;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px #ccc;
-}
-
-.auto img{
-width:100%;
-max-width:500px;
-border-radius:20px;
-animation:move 3s infinite alternate;
-}
-
-@keyframes move{
-from{transform:translateX(-15px);}
-to{transform:translateX(15px);}
-}
-
-input,select{
-width:90%;
-padding:12px;
-margin:8px;
-border-radius:10px;
-border:1px solid #aaa;
-font-size:16px;
-}
-
-button,.btn{
-padding:15px 25px;
-border:0;
-border-radius:50px;
-font-size:18px;
-color:white;
-margin:8px;
-text-decoration:none;
-display:inline-block;
-cursor:pointer;
-}
-
-.call{background:#2196f3;}
-.whatsapp{background:#25d366;}
-.pay{background:#673ab7;}
-
-.map iframe{
-width:95%;
-height:300px;
-border:0;
-border-radius:15px;
-}
-
-.footer{
-background:#222;
-color:white;
-padding:20px;
-margin-top:20px;
-}
-
-.float{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25d366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<div class="header">
-
-<h1>🚖 Deepak Dabi Auto Service</h1>
-
-<div class="phone">
-📞 9521393991
-</div>
-
-<p>24x7 Auto Booking Service - Jodhpur</p>
-
-</div>
-
-
-
-<div class="card auto">
-
-<img src="auto.jpg">
-
-<br>
-
-<a class="btn call" href="tel:9521393991">
-📞 Call Now
-</a>
-
-<a class="btn whatsapp" 
-href="https://wa.me/919521393991">
-💬 WhatsApp
-</a>
-
-</div>
-
-
-
+body{margin:0;font-family:Arial;background:#f2f2f2;text-align:center}
+.header{background:linear-gradient(45deg,#ff9800,#ffd54f);padding:20px}
+.card{background:#fff;width:92%;max-width:650px;margin:15px auto;padding:20px;border-radius:15px;box-shadow:0 5px 15px #ccc}
+input,select,button{width:90%;padding:12px;margin:8px;border-radius:10px;font-size:16px}
+button{border:0;color:#fff;cursor:pointer;background:#25d366}
+.btn{display:inline-block;padding:12px 20px;border-radius:30px;color:#fff;text-decoration:none;margin:5px}
+.call{background:#2196f3}.wa{background:#25d366}.pay{background:#673ab7}
+.float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;padding:15px 20px;border-radius:40px;text-decoration:none}
+</style></head><body>
+<div class="header"><h1>🚖 Deepak Dabi Auto Service</h1><h2>📞9521393991</h2><p>24x7 Auto Booking - Jodhpur</p></div>
 
 <div class="card">
-
-<h2>🚖 Online Booking</h2>
-
-
-<input id="name" placeholder="नाम">
-
-<input id="mobile" placeholder="मोबाइल नंबर">
-
-<input id="pickup" placeholder="Pickup Location">
-
-<input id="drop" placeholder="Drop Location">
-
-
-<button onclick="booking()" 
-style="background:#25d366">
-
-Confirm Booking
-
-</button>
-
+<a class="btn call" href="tel:9521393991">📞 Call</a>
+<a class="btn wa" href="https://wa.me/919521393991">💬 WhatsApp</a>
 </div>
-
-
-
-
 
 <div class="card">
-
-<h2>💰 Fare Calculator</h2>
-
-
-<input id="km" type="number" placeholder="Distance KM">
-
-
-<select id="rate">
-
-<option value="20">
-City Ride ₹20/KM
-</option>
-
-<option value="30">
-Railway Station ₹30/KM
-</option>
-
-<option value="40">
-Airport ₹40/KM
-</option>
-
-</select>
-
-
-<button onclick="fare()" 
-style="background:#ff9800">
-
-Calculate Fare
-
-</button>
-
-
-<h3 id="price"></h3>
-
+<h2>Booking</h2>
+<input id="name" placeholder="Customer Name">
+<input id="mobile" placeholder="Mobile">
+<input id="pickup" placeholder="Pickup">
+<input id="drop" placeholder="Drop">
+<p id="loc">Location: Not Found</p>
+<button onclick="getLocation()">📍 Get Live GPS</button>
+<button onclick="booking()">Confirm Booking</button>
 </div>
-
-
-
-
 
 <div class="card">
-
-<h2>📍 Google Route</h2>
-
-
-<input id="from" placeholder="Pickup">
-
-<input id="to" placeholder="Drop">
-
-
-<button onclick="openMap()"
-style="background:#4285F4">
-
-Open Map
-
-</button>
-
+<h2>Fare</h2>
+<input id="km" type="number" placeholder="KM">
+<select id="rate"><option value="20">₹20/KM</option><option value="30">₹30/KM</option><option value="40">₹40/KM</option></select>
+<button onclick="fare()">Calculate</button><h3 id="price"></h3>
 </div>
-
-
-
-
 
 <div class="card">
-
-<h2>💳 Online Payment</h2>
-
-
-<input id="amount" type="number" placeholder="Amount ₹">
-
-
-<button onclick="payUPI()" class="pay">
-
-Pay Now
-
-</button>
-
+<h2>Route</h2>
+<input id="from" placeholder="From"><input id="to" placeholder="To">
+<button onclick="openMap()">Open Google Maps</button>
 </div>
-
-
-
-
 
 <div class="card">
-
-<h2>🚕 हमारी सेवाएं</h2>
-
-<p>🚉 Railway Station Pickup Drop</p>
-
-<p>🚌 Bus Stand Service</p>
-
-<p>🏥 Hospital Emergency Ride</p>
-
-<p>✈ Airport Pickup Drop</p>
-
-<p>🏙 Jodhpur City Ride</p>
-
+<h2>UPI Payment</h2>
+<input id="amount" type="number" placeholder="Amount">
+<button class="pay" onclick="payUPI()">Pay Now</button>
 </div>
 
-
-
-
-
-<div class="card map">
-
-<h2>📍 Jodhpur Location</h2>
-
-<iframe src="https://maps.google.com/maps?q=Jodhpur%20Rajasthan&t=&z=13&output=embed"></iframe>
-
-</div>
-
-
-
-
-
-<div class="footer">
-
-<h3>Deepak Dabi Auto Service</h3>
-
-<p>📍 Jodhpur Rajasthan</p>
-
-<p>📞 9521393991</p>
-
-</div>
-
-
-
-<a class="float" href="https://wa.me/919521393991">
-💬 Book Auto
-</a>
-
-
-
+<a class="float" href="https://wa.me/919521393991">Book Auto</a>
 
 <script>
-
-
+let gpsLink="Location not shared";
+function getLocation(){
+if(!navigator.geolocation){alert("Not supported");return;}
+navigator.geolocation.getCurrentPosition(function(pos){
+let lat=pos.coords.latitude,lng=pos.coords.longitude;
+gpsLink="https://www.google.com/maps?q="+lat+","+lng;
+document.getElementById("loc").innerHTML="Latitude: "+lat+"<br>Longitude: "+lng;
+},function(){alert("Location permission denied");});
+}
 function booking(){
-
-let msg =
-"🚖 Deepak Dabi Auto Booking%0A%0A"+
-"Name: "+name.value+"%0A"+
-"Mobile: "+mobile.value+"%0A"+
-"Pickup: "+pickup.value+"%0A"+
-"Drop: "+drop.value;
-
-
-window.open(
-"https://wa.me/919521393991?text="+msg
-);
-
+let customerName=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let msg="🚖 Deepak Dabi Auto Booking\n\n👤 Name: "+customerName+"\n📞 Mobile: "+mobile+"\n📍 Pickup: "+pickup+"\n🏁 Drop: "+drop+"\n📌 GPS: "+gpsLink;
+window.open("https://wa.me/919521393991?text="+encodeURIComponent(msg),"_blank");
 }
-
-
-
-
-function fare(){
-
-let total =
-km.value * rate.value;
-
-price.innerHTML =
-"Estimated Fare ₹ "+total;
-
-}
-
-
-
-
-function openMap(){
-
-window.open(
-"https://www.google.com/maps/dir/"
-+from.value+
-"/"+
-to.value
-);
-
-}
-
-
-
-
+function fare(){price.innerHTML="Estimated Fare ₹ "+((+km.value||0)*(+rate.value||0));}
+function openMap(){window.open("https://www.google.com/maps/dir/"+encodeURIComponent(from.value)+"/"+encodeURIComponent(to.value));}
 function payUPI(){
-
-let amount =
-document.getElementById("amount").value;
-
-
-if(amount==""){
-
-alert("Amount डालें");
-return;
-
+let a=amount.value;if(!a){alert("Amount");return;}
+location.href="upi://pay?pa=9521393991@kotakbank&pn=Deepak%20Dabi%20Auto%20Service&tn=Auto%20Booking&am="+a+"&cu=INR";
 }
-
-
-let upi =
-"upi://pay?pa=9521393991@kotakbank"+
-"&pn=Deepak%20Dabi%20Auto%20Service"+
-"&tn=Auto%20Booking%20Payment"+
-"&am="+amount+
-"&cu=INR";
-
-
-window.location.href=upi;
-
-}
-
-
-</script>
-
-
-</body>
-</html>
+</script></body></html>
