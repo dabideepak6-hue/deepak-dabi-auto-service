@@ -221,8 +221,26 @@ Our Services
 
 </footer>
 
+<!-- Main Script -->
 <script src="script.js"></script>
 
-</body>
+<!-- Firebase -->
+<script type="module" src="firebase.js"></script>
 
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then((registration) => {
+            console.log("✅ Service Worker Registered");
+        })
+        .catch((error) => {
+            console.log("❌ Service Worker Error:", error);
+        });
+    });
+}
+</script>
+
+</body>
 </html>
