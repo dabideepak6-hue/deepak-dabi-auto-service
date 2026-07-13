@@ -1,77 +1,228 @@
 <!DOCTYPE html>
-<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Deepak Dabi Auto Service</title>
-<style>
-body{margin:0;font-family:Arial;background:#f2f2f2;text-align:center}
-.header{background:linear-gradient(45deg,#ff9800,#ffd54f);padding:20px}
-.card{background:#fff;width:92%;max-width:650px;margin:15px auto;padding:20px;border-radius:15px;box-shadow:0 5px 15px #ccc}
-input,select,button{width:90%;padding:12px;margin:8px;border-radius:10px;font-size:16px}
-button{border:0;color:#fff;cursor:pointer;background:#25d366}
-.btn{display:inline-block;padding:12px 20px;border-radius:30px;color:#fff;text-decoration:none;margin:5px}
-.call{background:#2196f3}.wa{background:#25d366}.pay{background:#673ab7}
-.float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;padding:15px 20px;border-radius:40px;text-decoration:none}
-</style></head><body>
-<div class="header"><h1>🚖 Deepak Dabi Auto Service</h1><h2>📞9521393991</h2><p>24x7 Auto Booking - Jodhpur</p></div>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deepak Dabi Auto Service | Jodhpur</title>
+
+<meta name="theme-color" content="#0f172a">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Loading Screen -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<h2>Deepak Dabi Auto Service</h2>
+
+<p>Loading...</p>
+
+</div>
+
+<!-- Animated Background -->
+
+<div class="background">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<!-- Header -->
+
+<header>
+
+<div class="logo">
+
+🚖 Deepak Dabi Auto Service
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#booking">Booking</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="glass">
+
+<h1>
+
+24×7 Auto Booking Service
+
+</h1>
+
+<p>
+
+Fast • Safe • Affordable
+
+</p>
+
+<h2>
+
+📍 Jodhpur, Rajasthan
+
+</h2>
+
+<div id="clock"></div>
+
+<div class="hero-buttons">
+
+<a href="tel:9521393991" class="call-btn">
+
+<i class="fa-solid fa-phone"></i>
+
+Call Now
+
+</a>
+
+<a href="https://wa.me/919521393991"
+
+target="_blank"
+
+class="wa-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Services -->
+
+<section id="services">
+
+<h2 class="title">
+
+Our Services
+
+</h2>
+
+<div class="service-grid">
 
 <div class="card">
-<a class="btn call" href="tel:9521393991">📞 Call</a>
-<a class="btn wa" href="https://wa.me/919521393991">💬 WhatsApp</a>
+
+🚉
+
+<h3>Railway Station</h3>
+
+<p>Pickup & Drop</p>
+
 </div>
 
 <div class="card">
-<h2>Booking</h2>
-<input id="name" placeholder="Customer Name">
-<input id="mobile" placeholder="Mobile">
-<input id="pickup" placeholder="Pickup">
-<input id="drop" placeholder="Drop">
-<p id="loc">Location: Not Found</p>
-<button onclick="getLocation()">📍 Get Live GPS</button>
-<button onclick="booking()">Confirm Booking</button>
+
+✈
+
+<h3>Airport</h3>
+
+<p>Pickup & Drop</p>
+
 </div>
 
 <div class="card">
-<h2>Fare</h2>
-<input id="km" type="number" placeholder="KM">
-<select id="rate"><option value="20">₹20/KM</option><option value="30">₹30/KM</option><option value="40">₹40/KM</option></select>
-<button onclick="fare()">Calculate</button><h3 id="price"></h3>
+
+🏥
+
+<h3>Hospital</h3>
+
+<p>Emergency Ride</p>
+
 </div>
 
 <div class="card">
-<h2>Route</h2>
-<input id="from" placeholder="From"><input id="to" placeholder="To">
-<button onclick="openMap()">Open Google Maps</button>
+
+🏙
+
+<h3>City Ride</h3>
+
+<p>Anywhere in Jodhpur</p>
+
 </div>
 
-<div class="card">
-<h2>UPI Payment</h2>
-<input id="amount" type="number" placeholder="Amount">
-<button class="pay" onclick="payUPI()">Pay Now</button>
 </div>
 
-<a class="float" href="https://wa.me/919521393991">Book Auto</a>
+</section>
 
-<script>
-let gpsLink="Location not shared";
-function getLocation(){
-if(!navigator.geolocation){alert("Not supported");return;}
-navigator.geolocation.getCurrentPosition(function(pos){
-let lat=pos.coords.latitude,lng=pos.coords.longitude;
-gpsLink="https://www.google.com/maps?q="+lat+","+lng;
-document.getElementById("loc").innerHTML="Latitude: "+lat+"<br>Longitude: "+lng;
-},function(){alert("Location permission denied");});
-}
-function booking(){
-let customerName=document.getElementById("name").value;
-let mobile=document.getElementById("mobile").value;
-let pickup=document.getElementById("pickup").value;
-let drop=document.getElementById("drop").value;
-let msg="🚖 Deepak Dabi Auto Booking\n\n👤 Name: "+customerName+"\n📞 Mobile: "+mobile+"\n📍 Pickup: "+pickup+"\n🏁 Drop: "+drop+"\n📌 GPS: "+gpsLink;
-window.open("https://wa.me/919521393991?text="+encodeURIComponent(msg),"_blank");
-}
-function fare(){price.innerHTML="Estimated Fare ₹ "+((+km.value||0)*(+rate.value||0));}
-function openMap(){window.open("https://www.google.com/maps/dir/"+encodeURIComponent(from.value)+"/"+encodeURIComponent(to.value));}
-function payUPI(){
-let a=amount.value;if(!a){alert("Amount");return;}
-location.href="upi://pay?pa=9521393991@kotakbank&pn=Deepak%20Dabi%20Auto%20Service&tn=Auto%20Booking&am="+a+"&cu=INR";
-}
-</script></body></html>
+<!-- Booking Section -->
+<section id="booking">
+
+<!-- अगले भाग में पूरा Booking Form जोड़ा जाएगा -->
+
+</section>
+
+<!-- Contact -->
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Jodhpur, Rajasthan</p>
+
+<p>📞 9521393991</p>
+
+<p>📧 support@example.com</p>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Deepak Dabi Auto Service
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
