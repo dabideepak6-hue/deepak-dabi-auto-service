@@ -1,21 +1,73 @@
+```json
 {
-  "name": "Deepak Dabi Auto Service",
-  "short_name": "Auto Service",
-  "start_url": "index.html",
+  "name": "Deepak Ride",
+  "short_name": "DeepakRide",
+  "description": "Bike, Auto and Cab Booking App",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#00b894",
   "orientation": "portrait",
+  "background_color": "#FFD400",
+  "theme_color": "#FFD400",
+  "lang": "en-IN",
+
   "icons": [
     {
-      "src": "assets/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/icons/icon-512.png",
+      "src": "images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     }
-  ]
+  ],
+
+  "categories": [
+    "travel",
+    "transportation",
+    "maps"
+  ],
+
+  "prefer_related_applications": false
 }
+```
