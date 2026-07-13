@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deepak Ride - Customer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#FFD400;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h2{
+color:#000;
+}
+
+.logout{
+background:#000;
+color:#fff;
+padding:10px 20px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.container{
+max-width:500px;
+margin:30px auto;
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+input,select{
+
+width:100%;
+padding:15px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+border:none;
+background:#000;
+color:#fff;
+font-size:17px;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#222;
+
+}
+
+.fare{
+
+margin:20px 0;
+padding:20px;
+background:#FFD400;
+font-size:22px;
+font-weight:bold;
+text-align:center;
+border-radius:10px;
+
+}
+
+.map{
+
+height:250px;
+background:#ddd;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:20px;
+font-size:18px;
+
+}
+
+.success{
+
+display:none;
+margin-top:20px;
+padding:15px;
+background:#d4edda;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🚖 Deepak Ride</h2>
+
+<a href="index.html" class="logout">
+Logout
+</a>
+
+</header>
+
+<div class="container">
+
+<div class="map">
+
+Google Map Here
+
+</div>
+
+<input
+id="pickup"
+placeholder="Pickup Location">
+
+<input
+id="drop"
+placeholder="Drop Location">
+
+<select id="ride">
+
+<option value="bike">Bike</option>
+
+<option value="auto">Auto</option>
+
+<option value="cab">Cab</option>
+
+</select>
+
+<input
+type="number"
+id="distance"
+placeholder="Distance (KM)"
+oninput="calculateFare()">
+
+<div class="fare">
+
+₹ <span id="fare">0</span>
+
+</div>
+
+<button onclick="bookRide()">
+
+Book Ride
+
+</button>
+
+<div class="success" id="success">
+
+Ride Booked Successfully 🚖
+
+</div>
+
+</div>
+
+<script>
+
+function calculateFare(){
+
+let km=parseFloat(document.getElementById("distance").value)||0;
+
+let type=document.getElementById("ride").value;
+
+let rate=0;
+
+if(type=="bike") rate=12;
+
+if(type=="auto") rate=18;
+
+if(type=="cab") rate=25;
+
+let fare=km*rate;
+
+if(fare<50) fare=50;
+
+document.getElementById("fare").innerHTML=fare;
+
+}
+
+document.getElementById("ride").addEventListener("change",calculateFare);
+
+function bookRide(){
+
+let pickup=document.getElementById("pickup").value;
+
+let drop=document.getElementById("drop").value;
+
+let ride=document.getElementById("ride").value;
+
+let fare=document.getElementById("fare").innerHTML;
+
+if(pickup==""||drop==""){
+
+alert("Enter Pickup and Drop Location");
+
+return;
+
+}
+
+let booking={
+
+pickup:pickup,
+
+drop:drop,
+
+rideType:ride,
+
+fare:fare,
+
+status:"Pending",
+
+bookingTime:new Date().toLocaleString()
+
+};
+
+localStorage.setItem("currentRide",JSON.stringify(booking));
+
+document.getElementById("success").style.display="block";
+
+setTimeout(function(){
+
+window.location="ride.html";
+
+},2000);
+
+}
+
+</script>
+
+</body>
+</html>
