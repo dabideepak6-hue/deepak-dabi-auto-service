@@ -1,0 +1,296 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deepak Ride Admin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#FFD400;
+padding:20px;
+font-size:24px;
+font-weight:bold;
+text-align:center;
+}
+
+.container{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.card h2{
+font-size:35px;
+margin-top:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+th{
+background:black;
+color:white;
+padding:15px;
+}
+
+td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+.pending{
+color:orange;
+font-weight:bold;
+}
+
+.accepted{
+color:green;
+font-weight:bold;
+}
+
+.completed{
+color:blue;
+font-weight:bold;
+}
+
+.cancelled{
+color:red;
+font-weight:bold;
+}
+
+.refresh{
+margin-bottom:20px;
+padding:12px 25px;
+background:#FFD400;
+border:none;
+cursor:pointer;
+border-radius:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+🚖 Deepak Ride Admin Dashboard
+
+</header>
+
+<div class="container">
+
+<button class="refresh" onclick="loadData()">
+
+Refresh Dashboard
+
+</button>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Rides</h3>
+
+<h2 id="rides">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Customers</h3>
+
+<h2 id="customers">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Drivers</h3>
+
+<h2 id="drivers">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Pending</h3>
+
+<h2 id="pending">0</h2>
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Pickup</th>
+
+<th>Drop</th>
+
+<th>Ride</th>
+
+<th>Fare</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="rideTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script type="module">
+
+import { db } from "./firebase.js";
+
+import {
+
+collection,
+
+getDocs
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
+window.loadData = async function(){
+
+let rideCount=0;
+let pendingCount=0;
+let customerCount=0;
+let driverCount=0;
+
+const tbody=document.getElementById("rideTable");
+
+tbody.innerHTML="";
+
+const rides=await getDocs(collection(db,"rides"));
+
+rides.forEach(doc=>{
+
+rideCount++;
+
+const data=doc.data();
+
+if(data.status==="Pending")
+pendingCount++;
+
+const row=`
+<tr>
+
+<td>${data.pickup}</td>
+
+<td>${data.drop}</td>
+
+<td>${data.rideType}</td>
+
+<td>₹${data.fare}</td>
+
+<td class="${String(data.status).toLowerCase()}">
+
+${data.status}
+
+</td>
+
+</tr>
+`;
+
+tbody.innerHTML+=row;
+
+});
+
+try{
+
+const users=await getDocs(collection(db,"users"));
+
+users.forEach(doc=>{
+
+const u=doc.data();
+
+if(u.role==="customer")
+customerCount++;
+
+if(u.role==="driver")
+driverCount++;
+
+});
+
+}catch(e){
+
+console.log(e);
+
+}
+
+document.getElementById("rides").innerHTML=rideCount;
+
+document.getElementById("pending").innerHTML=pendingCount;
+
+document.getElementById("customers").innerHTML=customerCount;
+
+document.getElementById("drivers").innerHTML=driverCount;
+
+}
+
+loadData();
+
+setInterval(loadData,5000);
+
+</script>
+
+</body>
+
+</html>
+```
