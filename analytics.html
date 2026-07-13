@@ -1,0 +1,122 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Analytics</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f5f5f5;
+
+padding:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+}
+
+canvas{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Ride Analytics</h2>
+
+<canvas id="rideChart"></canvas>
+
+</div>
+
+<div class="card">
+
+<h2>Revenue Analytics</h2>
+
+<canvas id="moneyChart"></canvas>
+
+</div>
+
+<script>
+
+const rideChart=new Chart(
+
+document.getElementById("rideChart"),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+
+datasets:[{
+
+label:"Total Rides",
+
+data:[12,18,20,16,25,32,28]
+
+}]
+
+}
+
+});
+
+const moneyChart=new Chart(
+
+document.getElementById("moneyChart"),
+
+{
+
+type:"line",
+
+data:{
+
+labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+
+datasets:[{
+
+label:"Revenue",
+
+data:[800,1400,1800,1600,2200,3000,2800]
+
+}]
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
