@@ -1,12 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Deepak Ride - Customer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <style>
 
@@ -18,7 +23,7 @@ font-family:Poppins,sans-serif;
 }
 
 body{
-background:#f4f4f4;
+background:#f5f5f5;
 }
 
 header{
@@ -37,84 +42,57 @@ color:#000;
 background:#000;
 color:#fff;
 padding:10px 20px;
-border-radius:8px;
+border-radius:10px;
 text-decoration:none;
 }
 
 .container{
-max-width:500px;
-margin:30px auto;
+max-width:600px;
+margin:20px auto;
+padding:20px;
 background:#fff;
-padding:25px;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-input,select{
+#map{
+height:400px;
+border-radius:15px;
+margin-bottom:20px;
+}
 
+input,select{
 width:100%;
 padding:15px;
-margin:12px 0;
+margin-bottom:15px;
+font-size:16px;
 border:1px solid #ccc;
 border-radius:10px;
-font-size:16px;
-
-}
-
-button{
-
-width:100%;
-padding:15px;
-border:none;
-background:#000;
-color:#fff;
-font-size:17px;
-border-radius:10px;
-cursor:pointer;
-
-}
-
-button:hover{
-
-background:#222;
-
 }
 
 .fare{
-
-margin:20px 0;
-padding:20px;
 background:#FFD400;
-font-size:22px;
-font-weight:bold;
+padding:20px;
 text-align:center;
+font-size:25px;
+font-weight:bold;
 border-radius:10px;
-
-}
-
-.map{
-
-height:250px;
-background:#ddd;
-border-radius:10px;
-display:flex;
-justify-content:center;
-align-items:center;
 margin-bottom:20px;
-font-size:18px;
-
 }
 
-.success{
-
-display:none;
-margin-top:20px;
+button{
+width:100%;
 padding:15px;
-background:#d4edda;
+font-size:18px;
+background:#000;
+color:white;
+border:none;
 border-radius:10px;
-text-align:center;
-font-weight:bold;
+cursor:pointer;
+}
 
+button:hover{
+background:#333;
 }
 
 </style>
@@ -128,26 +106,28 @@ font-weight:bold;
 <h2>🚖 Deepak Ride</h2>
 
 <a href="index.html" class="logout">
+
 Logout
+
 </a>
 
 </header>
 
 <div class="container">
 
-<div class="map">
-
-Google Map Here
-
-</div>
+<div id="map"></div>
 
 <input
+type="text"
 id="pickup"
-placeholder="Pickup Location">
+placeholder="Pickup Location"
+readonly>
 
 <input
+type="text"
 id="drop"
-placeholder="Drop Location">
+placeholder="Drop Location"
+readonly>
 
 <select id="ride">
 
@@ -163,7 +143,7 @@ placeholder="Drop Location">
 type="number"
 id="distance"
 placeholder="Distance (KM)"
-oninput="calculateFare()">
+readonly>
 
 <div class="fare">
 
@@ -177,87 +157,15 @@ Book Ride
 
 </button>
 
-<div class="success" id="success">
-
-Ride Booked Successfully 🚖
-
 </div>
 
-</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script>
+<script type="module" src="js/map.js"></script>
 
-function calculateFare(){
-
-let km=parseFloat(document.getElementById("distance").value)||0;
-
-let type=document.getElementById("ride").value;
-
-let rate=0;
-
-if(type=="bike") rate=12;
-
-if(type=="auto") rate=18;
-
-if(type=="cab") rate=25;
-
-let fare=km*rate;
-
-if(fare<50) fare=50;
-
-document.getElementById("fare").innerHTML=fare;
-
-}
-
-document.getElementById("ride").addEventListener("change",calculateFare);
-
-function bookRide(){
-
-let pickup=document.getElementById("pickup").value;
-
-let drop=document.getElementById("drop").value;
-
-let ride=document.getElementById("ride").value;
-
-let fare=document.getElementById("fare").innerHTML;
-
-if(pickup==""||drop==""){
-
-alert("Enter Pickup and Drop Location");
-
-return;
-
-}
-
-let booking={
-
-pickup:pickup,
-
-drop:drop,
-
-rideType:ride,
-
-fare:fare,
-
-status:"Pending",
-
-bookingTime:new Date().toLocaleString()
-
-};
-
-localStorage.setItem("currentRide",JSON.stringify(booking));
-
-document.getElementById("success").style.display="block";
-
-setTimeout(function(){
-
-window.location="ride.html";
-
-},2000);
-
-}
-
-</script>
+<script type="module" src="js/booking.js"></script>
 
 </body>
+
 </html>
+```
