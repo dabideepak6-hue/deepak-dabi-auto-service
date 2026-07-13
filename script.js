@@ -1,33 +1,28 @@
-/* =====================================
-   Deepak Dabi Auto Service
-   Premium Script
-===================================== */
+// =========================================
+// Deepak Dabi Auto Service
+// Premium Script v1.0
+// =========================================
 
-// ----------------------------
-// Loading Screen
-// ----------------------------
+// ---------- Loader ----------
+window.onload = function () {
 
-window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
 
-    setTimeout(() => {
+    if (loader) {
 
-        const loader = document.getElementById("loader");
-
-        if (loader) {
+        setTimeout(() => {
 
             loader.style.opacity = "0";
 
             loader.style.visibility = "hidden";
 
-        }
+        }, 1200);
 
-    }, 1500);
+    }
 
-});
+};
 
-// ----------------------------
-// Live Clock
-// ----------------------------
+// ---------- Live Clock ----------
 
 function updateClock() {
 
@@ -37,23 +32,7 @@ function updateClock() {
 
     const now = new Date();
 
-    clock.innerHTML = now.toLocaleString("en-IN", {
-
-        weekday: "long",
-
-        year: "numeric",
-
-        month: "long",
-
-        day: "numeric",
-
-        hour: "2-digit",
-
-        minute: "2-digit",
-
-        second: "2-digit"
-
-    });
+    clock.innerHTML = now.toLocaleString();
 
 }
 
@@ -61,23 +40,22 @@ setInterval(updateClock, 1000);
 
 updateClock();
 
-// ----------------------------
-// Dark Mode
-// ----------------------------
+
+// ---------- Dark Mode ----------
 
 const themeBtn = document.getElementById("themeBtn");
 
-if (localStorage.getItem("theme") === "light") {
-
-    document.body.classList.add("light");
-
-    if (themeBtn) themeBtn.innerHTML = "☀️";
-
-}
-
 if (themeBtn) {
 
-    themeBtn.onclick = () => {
+    if (localStorage.getItem("theme") == "light") {
+
+        document.body.classList.add("light");
+
+        themeBtn.innerHTML = "☀";
+
+    }
+
+    themeBtn.onclick = function () {
 
         document.body.classList.toggle("light");
 
@@ -85,7 +63,7 @@ if (themeBtn) {
 
             localStorage.setItem("theme", "light");
 
-            themeBtn.innerHTML = "☀️";
+            themeBtn.innerHTML = "☀";
 
         } else {
 
@@ -95,21 +73,20 @@ if (themeBtn) {
 
         }
 
-    };
+    }
 
 }
 
-// ----------------------------
-// Live GPS
-// ----------------------------
 
-let gpsLink = "Location Not Available";
+// ---------- GPS ----------
+
+let gpsLink = "";
 
 function getLocation() {
 
     if (!navigator.geolocation) {
 
-        alert("GPS Supported नहीं है");
+        alert("GPS Not Supported");
 
         return;
 
@@ -117,35 +94,29 @@ function getLocation() {
 
     navigator.geolocation.getCurrentPosition(
 
-        (position) => {
+        function (position) {
 
-            const lat = position.coords.latitude;
+            let lat = position.coords.latitude;
 
-            const lng = position.coords.longitude;
+            let lng = position.coords.longitude;
 
-            gpsLink =
+            gpsLink = "https://maps.google.com/?q=" + lat + "," + lng;
 
-                "https://www.google.com/maps?q=" +
+            let pickup = document.getElementById("pickup");
 
-                lat +
+            if (pickup) {
 
-                "," +
+                pickup.value = lat + "," + lng;
 
-                lng;
+            }
 
-            alert("Live Location Captured");
-
-        },
-
-        () => {
-
-            alert("Location Permission Denied");
+            alert("Location Captured");
 
         },
 
-        {
+        function () {
 
-            enableHighAccuracy: true
+            alert("Permission Denied");
 
         }
 
@@ -153,33 +124,49 @@ function getLocation() {
 
 }
 
-// ----------------------------
-// Fare Calculator
-// ----------------------------
+
+
+// ---------- Fare ----------
 
 function calculateFare() {
 
     const km = Number(document.getElementById("km").value);
 
-    const rate = Number(document.getElementById("rate").value);
+    let rate = 20;
+
+    const vehicle = document.getElementById("vehicle");
+
+    if (vehicle) {
+
+        if (vehicle.value == "Mini Cab") rate = 30;
+
+        if (vehicle.value == "SUV") rate = 45;
+
+    }
 
     const total = km * rate;
 
-    document.getElementById("price").innerHTML =
+    const price = document.getElementById("price");
 
-        "Estimated Fare ₹ " + total;
+    if (price) {
+
+        price.innerHTML =
+
+            "Estimated Fare ₹ " + total;
+
+    }
 
 }
 
-// ----------------------------
-// Google Route
-// ----------------------------
+
+
+// ---------- Google Route ----------
 
 function openRoute() {
 
-    const from = document.getElementById("from").value;
+    let from = document.getElementById("pickup").value;
 
-    const to = document.getElementById("to").value;
+    let to = document.getElementById("drop").value;
 
     window.open(
 
@@ -195,119 +182,21 @@ function openRoute() {
 
 }
 
-// ----------------------------
-// UPI Payment
-// ----------------------------
 
-function payNow() {
 
-    const amount =
+// ---------- Save Booking ----------
 
-        document.getElementById("amount").value;
-
-    if (amount === "") {
-
-        alert("Amount Enter करें");
-
-        return;
-
-    }
-
-    const upi =
-
-        "upi://pay?pa=9521393991@kotakbank" +
-
-        "&pn=Deepak%20Dabi%20Auto%20Service" +
-
-        "&tn=Auto%20Booking" +
-
-        "&am=" +
-
-        amount +
-
-        "&cu=INR";
-
-    window.location.href = upi;
-
-}
-
-// ----------------------------
-// WhatsApp Booking
-// ----------------------------
-
-function bookNow() {
-
-    const customerName =
-
-        document.getElementById("name").value;
-
-    const mobile =
-
-        document.getElementById("mobile").value;
-
-    const pickup =
-
-        document.getElementById("pickup").value;
-
-    const drop =
-
-        document.getElementById("drop").value;
-
-    const message =
-
-        "🚖 Deepak Dabi Auto Booking\n\n" +
-
-        "👤 Name : " + customerName + "\n" +
-
-        "📞 Mobile : " + mobile + "\n" +
-
-        "📍 Pickup : " + pickup + "\n" +
-
-        "🏁 Drop : " + drop + "\n" +
-
-        "📌 GPS : " + gpsLink;
-
-    saveBooking(customerName, mobile, pickup, drop);
-
-    window.open(
-
-        "https://wa.me/919521393991?text=" +
-
-        encodeURIComponent(message),
-
-        "_blank"
-
-    );
-
-}
-
-// ----------------------------
-// Booking History
-// ----------------------------
-
-function saveBooking(name, mobile, pickup, drop) {
+function saveBooking(data) {
 
     let history =
 
-        JSON.parse(localStorage.getItem("bookingHistory")) || [];
+        JSON.parse(localStorage.getItem("bookings")) || [];
 
-    history.push({
-
-        name,
-
-        mobile,
-
-        pickup,
-
-        drop,
-
-        time: new Date().toLocaleString()
-
-    });
+    history.push(data);
 
     localStorage.setItem(
 
-        "bookingHistory",
+        "bookings",
 
         JSON.stringify(history)
 
@@ -315,34 +204,212 @@ function saveBooking(name, mobile, pickup, drop) {
 
 }
 
+
+
+// ---------- Booking ----------
+
+function bookNow() {
+
+    const customerName =
+
+        document.getElementById("name").value.trim();
+
+    const mobile =
+
+        document.getElementById("mobile").value.trim();
+
+    const pickup =
+
+        document.getElementById("pickup").value.trim();
+
+    const drop =
+
+        document.getElementById("drop").value.trim();
+
+    const vehicle =
+
+        document.getElementById("vehicle").value;
+
+    const payment =
+
+        document.getElementById("payment").value;
+
+    if (
+
+        customerName == "" ||
+
+        mobile == "" ||
+
+        pickup == "" ||
+
+        drop == ""
+
+    ) {
+
+        alert("Please Fill All Fields");
+
+        return;
+
+    }
+
+    const booking = {
+
+        customerName,
+
+        mobile,
+
+        pickup,
+
+        drop,
+
+        vehicle,
+
+        payment,
+
+        gps: gpsLink,
+
+        date: new Date().toLocaleString()
+
+    };
+
+    saveBooking(booking);
+
+    let message =
+
+`🚖 Deepak Dabi Auto Booking
+
+👤 Name : ${customerName}
+
+📞 Mobile : ${mobile}
+
+📍 Pickup : ${pickup}
+
+🏁 Drop : ${drop}
+
+🚖 Vehicle : ${vehicle}
+
+💳 Payment : ${payment}
+
+📌 GPS : ${gpsLink}`;
+
+    window.open(
+
+"https://wa.me/919521393991?text="+
+
+encodeURIComponent(message),
+
+"_blank"
+
+    );
+
+}
+
+
+
+// ---------- Booking History ----------
+
 function showHistory() {
 
-    const history =
+    let history =
 
-        JSON.parse(localStorage.getItem("bookingHistory")) || [];
+JSON.parse(localStorage.getItem("bookings")) || [];
 
     console.table(history);
 
 }
 
-// ----------------------------
-// Rating
-// ----------------------------
+
+
+// ---------- Rating ----------
 
 function rate(star) {
 
     localStorage.setItem("rating", star);
 
-    alert("Thanks for Rating ⭐ " + star);
+    alert("Thanks For Rating ⭐ " + star);
 
 }
 
-const oldRating =
 
-    localStorage.getItem("rating");
 
-if (oldRating) {
+// ---------- Payment ----------
 
-    console.log("Customer Rating :", oldRating);
+function payNow() {
+
+    let amount = prompt("Enter Amount");
+
+    if (!amount) return;
+
+    let upi =
+
+"upi://pay?pa=9521393991@kotakbank&pn=Deepak%20Dabi&am="+amount+"&cu=INR";
+
+    window.location.href = upi;
 
 }
+
+
+
+// ---------- Install PWA ----------
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e)=>{
+
+e.preventDefault();
+
+deferredPrompt=e;
+
+let install=document.getElementById("installApp");
+
+if(install){
+
+install.style.display="inline-block";
+
+install.onclick=()=>{
+
+deferredPrompt.prompt();
+
+};
+
+}
+
+});
+
+
+
+// ---------- Online Offline ----------
+
+window.addEventListener("online",()=>{
+
+console.log("Online");
+
+});
+
+window.addEventListener("offline",()=>{
+
+alert("Internet Disconnected");
+
+});
+
+
+
+// ---------- Smooth Scroll ----------
+
+document.querySelectorAll("a[href^='#']").forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href"))
+
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
