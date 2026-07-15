@@ -1,89 +1,80 @@
+// =============================
+// Deepak Dabi Maps
 // script.js
+// =============================
 
-window.CESIUM_BASE_URL =
-"https://cesium.com/downloads/cesiumjs/releases/1.133/Build/Cesium/";
+// Jodhpur Default Location
+const map = L.map("map").setView([26.2389, 73.0243], 13);
 
-const viewer = new Cesium.Viewer("cesiumContainer", {
-    animation: false,
-    timeline: false,
-    geocoder: false,
-    homeButton: true,
-    sceneModePicker: true,
-    baseLayerPicker: true,
-    navigationHelpButton: false,
-    fullscreenButton: false
-});
+// OpenStreetMap Layer
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 20,
+    attribution: "&copy; OpenStreetMap Contributors"
+}).addTo(map);
 
-// Home Location (Jodhpur)
-viewer.camera.setView({
-    destination: Cesium.Cartesian3.fromDegrees(
-        73.0243,
-        26.2389,
-        2500000
-    )
-});
+// Marker
+let marker = L.marker([26.2389,73.0243]).addTo(map);
+
+marker.bindPopup("🌍 Deepak Dabi Maps").openPopup();
 
 // My Location
-document.getElementById("locationBtn").onclick = function () {
+function getLocation(){
 
-    if (!navigator.geolocation) {
-        alert("Location not supported");
-        return;
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position){
+
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+
+                map.setView([lat,lng],17);
+
+                marker.setLatLng([lat,lng]);
+
+                marker.bindPopup("📍 You are Here").openPopup();
+
+            },
+
+            function(error){
+
+                alert("Location Permission Denied");
+
+            }
+
+        );
+
+    }else{
+
+        alert("Geolocation not Supported");
+
     }
 
-    navigator.geolocation.getCurrentPosition(function (pos) {
+}
 
-        const lat = pos.coords.latitude;
-        const lon = pos.coords.longitude;
+// Double Click Marker
+map.on("dblclick",function(e){
 
-        viewer.entities.add({
-            position: Cesium.Cartesian3.fromDegrees(lon, lat),
-            point: {
-                pixelSize: 12,
-                color: Cesium.Color.RED
-            },
-            label: {
-                text: "My Location",
-                pixelOffset: new Cesium.Cartesian2(0, -25)
-            }
-        });
+    L.marker(e.latlng)
 
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(
-                lon,
-                lat,
-                15000
-            )
-        });
+    .addTo(map)
 
-    });
+    .bindPopup("Custom Marker")
 
-};
+    .openPopup();
 
-// Fullscreen
-document.getElementById("fullscreenBtn").onclick = function () {
+});
 
-    if (!document.fullscreenElement)
-        document.documentElement.requestFullscreen();
-    else
-        document.exitFullscreen();
+// Click Coordinates
+map.on("click",function(e){
 
-};
+console.log(
 
-// Earth Button
-document.getElementById("earthBtn").onclick = function () {
+"Latitude : "+e.latlng.lat+
 
-    viewer.camera.flyHome(2);
+" Longitude : "+e.latlng.lng
 
-};
+);
 
-// Search (Demo)
-document.getElementById("searchBtn").onclick = function () {
-
-    const q = document.getElementById("searchBox").value;
-
-    if (!q) return;
-
-    alert("Search: " + q + "\n\nPlace search requires a geocoding service.");
-
-};
+});
