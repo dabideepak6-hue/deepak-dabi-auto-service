@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certificate | Deepak Dabi EV Repairing Course</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.certificate-box{
+
+max-width:900px;
+margin:auto;
+padding:50px;
+background:#fff;
+color:#111;
+border:10px solid #00d084;
+border-radius:20px;
+text-align:center;
+
+}
+
+.certificate-box h1{
+
+font-size:45px;
+color:#008f5d;
+
+}
+
+.certificate-box h2{
+
+font-size:30px;
+
+}
+
+.certificate-box p{
+
+font-size:20px;
+
+}
+
+
+input{
+
+padding:15px;
+width:300px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:18px;
+
+}
+
+
+@media print{
+
+header,
+footer,
+.form-section,
+.btn{
+
+display:none;
+
+}
+
+
+body{
+
+background:white;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+⚡ DEEPAK DABI EV REPAIRING COURSE
+
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="quiz.html">Quiz</a>
+<a href="certificate.html">Certificate</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<section class="form-section">
+
+
+<h2>Generate Your Certificate</h2>
+
+
+<div class="card">
+
+
+<input 
+type="text"
+id="studentName"
+placeholder="Enter Student Name"
+>
+
+
+<br><br>
+
+
+<button class="btn" onclick="generateCertificate()">
+
+Generate Certificate
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<div class="certificate-box" id="certificate">
+
+
+<h1>
+
+CERTIFICATE
+
+</h1>
+
+
+<h2>
+
+EV REPAIRING COURSE
+
+</h2>
+
+
+
+<p>
+
+This Certificate is Proudly Presented To
+
+</p>
+
+
+<h2 id="name">
+
+_________________
+
+</h2>
+
+
+
+<p>
+
+For Successfully Completing
+
+</p>
+
+
+<h2>
+
+Professional Electric Vehicle Repairing Course
+
+</h2>
+
+
+
+<p>
+
+Battery | BMS | Motor | Controller | Charger | Diagnostics
+
+</p>
+
+
+
+<br>
+
+
+<p>
+
+Certificate ID:
+
+<strong id="certId">
+
+DD-EV-0000
+
+</strong>
+
+</p>
+
+
+<br><br>
+
+
+<div style="display:flex;justify-content:space-around">
+
+
+<div>
+
+_________________
+
+<br>
+
+Instructor
+
+<br>
+
+Deepak Dabi
+
+</div>
+
+
+
+<div>
+
+_________________
+
+<br>
+
+Date
+
+<br>
+
+<span id="date"></span>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+<br>
+
+
+<center>
+
+<button class="btn" onclick="printCertificate()">
+
+🖨 Print Certificate
+
+</button>
+
+
+</center>
+
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 Deepak Dabi EV Repairing Course
+
+</p>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+function generateCertificate(){
+
+
+let student=document.getElementById("studentName").value;
+
+
+
+if(student==""){
+
+
+alert("Please Enter Student Name");
+
+return;
+
+
+}
+
+
+
+document.getElementById("name").innerHTML=student;
+
+
+
+let id="DD-EV-"+Math.floor(100000+Math.random()*900000);
+
+
+
+document.getElementById("certId").innerHTML=id;
+
+
+
+let today=new Date();
+
+
+
+document.getElementById("date").innerHTML=
+
+today.toLocaleDateString();
+
+
+
+localStorage.setItem("certificateName",student);
+
+localStorage.setItem("certificateID",id);
+
+
+
+}
+
+
+
+
+
+function printCertificate(){
+
+
+window.print();
+
+
+}
+
+
+
+
+window.onload=function(){
+
+
+let savedName=
+
+localStorage.getItem("certificateName");
+
+
+let savedId=
+
+localStorage.getItem("certificateID");
+
+
+
+if(savedName){
+
+document.getElementById("name").innerHTML=savedName;
+
+}
+
+
+if(savedId){
+
+document.getElementById("certId").innerHTML=savedId;
+
+}
+
+
+
+document.getElementById("date").innerHTML=
+
+new Date().toLocaleDateString();
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
