@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EV Error Codes | Deepak Dabi EV Repairing Course</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+⚡ DEEPAK DABI EV REPAIRING COURSE
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="battery.html">Battery</a>
+<a href="bms.html">BMS</a>
+<a href="motor.html">Motor</a>
+<a href="controller.html">Controller</a>
+<a href="charger.html">Charger</a>
+<a href="error-codes.html" class="active">Error Codes</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>⚠ EV Error Code Diagnosis</h1>
+
+<p>
+Search Fault Code and Find Repair Solution
+</p>
+
+</section>
+
+
+
+<section>
+
+
+<h2>🔍 Search Error Code</h2>
+
+
+<div class="card search-box">
+
+
+<input 
+type="text"
+id="errorSearch"
+placeholder="Example: E101, BMS, MOTOR"
+>
+
+
+<button onclick="searchErrorCode()">
+
+Search
+
+</button>
+
+
+</div>
+
+
+<div id="errorResult" class="card">
+
+Enter Error Code To Search
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>Battery Error Codes</h2>
+
+
+<div class="grid">
+
+
+<div class="card error">
+
+<h3>E101 - Battery Low Voltage</h3>
+
+<p>
+
+Cause:
+
+<br>
+• Low Cell Voltage
+
+<br>
+• Weak Battery
+
+<br>
+• BMS Protection
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check Cell Voltage
+
+<br>
+
+Balance Cells
+
+<br>
+
+Test Battery Pack
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>E102 - Battery Over Voltage</h3>
+
+<p>
+
+Cause:
+
+<br>
+
+• Over Charging
+
+<br>
+
+• Cell Imbalance
+
+
+</p>
+
+<p>
+
+Solution:
+
+<br>
+
+Check Charger Output
+
+<br>
+
+Check BMS
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>BMS Fault Codes</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+
+<h3>BMS001 - Communication Error</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+• CAN Line Fault
+
+<br>
+• Connector Loose
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check CAN-H
+
+<br>
+
+Check CAN-L
+
+<br>
+
+Inspect Connector
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>BMS002 - Cell Imbalance</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Weak Cell
+
+<br>
+
+• Balancing Failure
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Measure Cell Voltage
+
+<br>
+
+Replace Weak Cell
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<h2>Motor Fault Codes</h2>
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+
+<h3>M101 - Motor Hall Error</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Hall Sensor Damage
+
+<br>
+
+• Wiring Fault
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check Hall Supply
+
+<br>
+
+Check Signal
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>M102 - Motor Phase Fault</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Phase Wire Open
+
+<br>
+
+• Motor Winding Fault
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check U-V-W Resistance
+
+<br>
+
+Inspect Motor
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>Controller Fault Codes</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+
+<h3>C101 - Controller Failure</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• MOSFET Damage
+
+<br>
+
+• Short Circuit
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check MOSFET
+
+<br>
+
+Check Controller Supply
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>C102 - Throttle Error</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Sensor Fault
+
+<br>
+
+• Signal Missing
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check 5V Supply
+
+<br>
+
+Check Signal Voltage
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>Charger Fault Codes</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+
+<h3>CH101 - Charging Failure</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Charger Fault
+
+<br>
+
+• BMS Lock
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check Charger Output
+
+<br>
+
+Scan Battery
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>CH102 - Charger Over Temperature</h3>
+
+
+<p>
+
+Cause:
+
+<br>
+
+• Fan Failure
+
+<br>
+
+• Over Load
+
+
+</p>
+
+
+<p>
+
+Solution:
+
+<br>
+
+Check Cooling System
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section>
+
+
+<h2>Quick Diagnostic Flow</h2>
+
+
+<div class="card">
+
+
+<pre>
+
+
+Customer Complaint
+
+        ↓
+
+Visual Inspection
+
+        ↓
+
+Scan Error Code
+
+        ↓
+
+Check Battery
+
+        ↓
+
+Check BMS
+
+        ↓
+
+Check Controller
+
+        ↓
+
+Check Motor
+
+        ↓
+
+Repair
+
+        ↓
+
+Road Test
+
+
+</pre>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<script>
+
+
+const errorDatabase = {
+
+
+"E101":
+"Battery Low Voltage - Check Cell Voltage and BMS",
+
+"E102":
+"Battery Over Voltage - Check Charger Output",
+
+"BMS001":
+"CAN Communication Fault - Check CAN Wiring",
+
+"BMS002":
+"Cell Imbalance - Balance or Replace Cell",
+
+"M101":
+"Hall Sensor Fault - Check Motor Hall Wiring",
+
+"M102":
+"Motor Phase Fault - Check U V W Phase",
+
+"C101":
+"Controller Fault - Check MOSFET",
+
+"C102":
+"Throttle Fault - Check 5V Signal",
+
+"CH101":
+"Charging Failure - Check Charger and BMS",
+
+"CH102":
+"Charger Temperature Fault - Check Cooling Fan"
+
+};
+
+
+
+function searchErrorCode(){
+
+
+let code=document.getElementById("errorSearch").value.toUpperCase();
+
+
+let result=document.getElementById("errorResult");
+
+
+if(errorDatabase[code]){
+
+
+result.innerHTML="⚠ "+code+"<br><br>"+errorDatabase[code];
+
+
+}
+
+else{
+
+
+result.innerHTML="❌ Error Code Not Found";
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Deepak Dabi EV Repairing Course
+</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
