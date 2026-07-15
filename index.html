@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepak Dabi Walkie Talkie</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🎙 Deepak Dabi Walkie Talkie</h1>
+
+<p>Real Time Voice Communication</p>
+
+</header>
+
+<section class="login">
+
+<input
+type="text"
+id="username"
+placeholder="Enter Your Name">
+
+<input
+type="text"
+id="room"
+placeholder="Room Code">
+
+<button id="joinBtn">
+Join Room
+</button>
+
+</section>
+
+<section id="dashboard" class="hidden">
+
+<div class="status">
+
+<div>
+
+Status :
+
+<span id="connectionStatus">
+
+Disconnected
+
+</span>
+
+</div>
+
+<div>
+
+Room :
+
+<span id="roomName">
+
+-
+
+</span>
+
+</div>
+
+<div>
+
+Users :
+
+<span id="userCount">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+<div class="users">
+
+<h2>Online Users</h2>
+
+<ul id="usersList">
+
+</ul>
+
+</div>
+
+<div class="speaker">
+
+<h2>
+
+Current Speaker
+
+</h2>
+
+<div id="speakerName">
+
+Nobody Talking
+
+</div>
+
+</div>
+
+<div class="controls">
+
+<button id="micBtn">
+
+🎤 Hold To Talk
+
+</button>
+
+<button id="muteBtn">
+
+🔇 Mute
+
+</button>
+
+<button id="leaveBtn">
+
+🚪 Leave
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Deepak Dabi Walkie Talkie
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
