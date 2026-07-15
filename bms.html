@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BMS Repair | Deepak Dabi EV Repairing Course</title>
+<title>BMS Module | Deepak Dabi EV Repairing Course</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,77 +23,176 @@
 <nav>
 
 <a href="index.html">Home</a>
-<a href="battery.html">Battery</a>
-<a href="bms.html" class="active">BMS</a>
-<a href="motor.html">Motor</a>
-<a href="controller.html">Controller</a>
-<a href="charger.html">Charger</a>
+<a href="course.html">Course</a>
+<a href="quiz.html">Quiz</a>
+<a href="certificate.html">Certificate</a>
 
 </nav>
 
 </header>
 
+
+
 <section class="hero">
 
-<h1>⚡ Battery Management System (BMS)</h1>
+<div>
+
+<h1>⚡ Module 2 : Battery Management System (BMS)</h1>
 
 <p>
 
-Learn Complete BMS Diagnosis, Testing & Repair
+Learn Complete BMS Working, MOSFET Testing,
+Cell Balancing and Fault Diagnosis.
 
 </p>
 
-</section>
+<a href="#bms-basics" class="btn">
 
-<section>
+Start Learning
 
-<h2>What is BMS?</h2>
-
-<div class="card">
-
-<p>
-
-Battery Management System (BMS) is the electronic control unit
-that monitors and protects the lithium battery pack.
-
-Main Functions:
-
-</p>
-
-<ul>
-
-<li>✔ Cell Voltage Monitoring</li>
-<li>✔ Cell Balancing</li>
-<li>✔ Temperature Monitoring</li>
-<li>✔ Over Charge Protection</li>
-<li>✔ Over Discharge Protection</li>
-<li>✔ Short Circuit Protection</li>
-<li>✔ Over Current Protection</li>
-<li>✔ CAN Communication</li>
-
-</ul>
+</a>
 
 </div>
 
 </section>
 
-<section>
 
-<h2>Main BMS Components</h2>
+
+<section id="bms-basics">
+
+<h2>What is BMS?</h2>
 
 <div class="grid">
 
 <div class="card">
 
-<h3>Battery Cells</h3>
+<h3>BMS Introduction</h3>
 
 <p>
 
-Individual Lithium Cells connected in Series and Parallel.
+BMS stands for
+Battery Management System.
+
+<br><br>
+
+It monitors and protects
+the battery pack.
 
 </p>
 
 </div>
+
+
+<div class="card">
+
+<h3>Main Functions</h3>
+
+<p>
+
+✔ Cell Voltage Monitoring
+
+<br><br>
+
+✔ Temperature Monitoring
+
+<br><br>
+
+✔ Charge Control
+
+<br><br>
+
+✔ Discharge Control
+
+<br><br>
+
+✔ Cell Balancing
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Why BMS is Important?</h3>
+
+<p>
+
+✔ Battery Safety
+
+<br>
+
+✔ Longer Battery Life
+
+<br>
+
+✔ Better Performance
+
+<br>
+
+✔ Prevents Damage
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Communication</h3>
+
+<p>
+
+CAN Bus
+
+<br>
+
+UART
+
+<br>
+
+Bluetooth
+
+<br>
+
+Controller Communication
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>BMS Hardware Parts</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Main IC</h3>
+
+<p>
+
+Battery Monitoring IC
+
+<br><br>
+
+Voltage Detection
+
+<br><br>
+
+Cell Protection
+
+</p>
+
+</div>
+
 
 <div class="card">
 
@@ -100,11 +200,20 @@ Individual Lithium Cells connected in Series and Parallel.
 
 <p>
 
-Controls Charging and Discharging Current.
+Charge MOSFET
+
+<br>
+
+Discharge MOSFET
+
+<br>
+
+Current Switching
 
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -112,23 +221,20 @@ Controls Charging and Discharging Current.
 
 <p>
 
-Measures Battery Temperature.
+Temperature Sensor
+
+<br>
+
+Over Heat Detection
+
+<br>
+
+Safety Protection
 
 </p>
 
 </div>
 
-<div class="card">
-
-<h3>Voltage Sense IC</h3>
-
-<p>
-
-Measures Cell Voltage Accurately.
-
-</p>
-
-</div>
 
 <div class="card">
 
@@ -136,19 +242,11 @@ Measures Cell Voltage Accurately.
 
 <p>
 
-Measures Charge and Discharge Current.
+Current Measurement
 
-</p>
+<br>
 
-</div>
-
-<div class="card">
-
-<h3>Microcontroller</h3>
-
-<p>
-
-Processes Data and Controls Protection Logic.
+Over Current Detection
 
 </p>
 
@@ -157,29 +255,249 @@ Processes Data and Controls Protection Logic.
 </div>
 
 </section>
+
+
 
 <section>
 
-<h2>BMS Inspection Checklist</h2>
+<h2>Cell Balancing</h2>
+
+<div class="grid">
 
 <div class="card">
 
-<ul>
+<h3>Passive Balancing</h3>
 
-<li>✅ Battery Voltage</li>
-<li>✅ Individual Cell Voltage</li>
-<li>✅ Cell Balancing</li>
-<li>✅ MOSFET Condition</li>
-<li>✅ Temperature Sensor</li>
-<li>✅ Fuse Check</li>
-<li>✅ CAN Communication</li>
-<li>✅ Connector Condition</li>
+<p>
 
-</ul>
+Uses Resistors
+
+<br><br>
+
+Removes Extra Energy
+
+<br><br>
+
+Simple Design
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Active Balancing</h3>
+
+<p>
+
+Transfers Energy
+
+Between Cells
+
+<br><br>
+
+Higher Efficiency
+
+</p>
+
+</div>
 
 </div>
 
 </section>
+
+
+
+<section>
+
+<h2>BMS Protection</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Over Voltage</h3>
+
+<p>
+
+Stops Charging
+
+When Cell Voltage
+is Too High.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Under Voltage</h3>
+
+<p>
+
+Stops Discharge
+
+When Cell Voltage
+is Too Low.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Over Current</h3>
+
+<p>
+
+Protects Battery
+
+Against High Current.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Short Circuit</h3>
+
+<p>
+
+Immediately Disconnects
+
+Battery Output.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+PART 2 START HERE
+=========================== -->
+  <section>
+
+<h2>MOSFET Testing</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Charge MOSFET</h3>
+
+<p>
+
+✔ Check Drain to Source
+
+<br><br>
+
+✔ Gate Signal
+
+<br><br>
+
+✔ Short Circuit Test
+
+<br><br>
+
+✔ Replace if Damaged
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Discharge MOSFET</h3>
+
+<p>
+
+✔ Output Voltage
+
+<br><br>
+
+✔ Heating Check
+
+<br><br>
+
+✔ Multimeter Test
+
+<br><br>
+
+✔ Gate Voltage
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>NTC Temperature Sensor</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Purpose</h3>
+
+<p>
+
+Monitors Battery Temperature
+
+<br><br>
+
+Prevents Over Heating
+
+<br><br>
+
+Protects Battery Pack
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Testing</h3>
+
+<p>
+
+Measure Resistance
+
+<br><br>
+
+Heat Sensor Slowly
+
+<br><br>
+
+Resistance Should Change
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
 
 <section>
 
@@ -191,62 +509,90 @@ Processes Data and Controls Protection Logic.
 
 <h3>Battery Not Charging</h3>
 
-<ul>
+<p>
 
-<li>Faulty MOSFET</li>
-<li>Fuse Open</li>
-<li>BMS Lock</li>
-<li>Broken Connector</li>
+✔ Charge MOSFET Fault
 
-</ul>
+<br>
+
+✔ Charger Detection Fault
+
+<br>
+
+✔ BMS Lock
+
+</p>
 
 </div>
+
 
 <div class="card">
 
-<h3>Battery Not Discharging</h3>
+<h3>No Output</h3>
 
-<ul>
+<p>
 
-<li>Protection Active</li>
-<li>Output MOSFET Damage</li>
-<li>Communication Failure</li>
+✔ Discharge MOSFET Fault
 
-</ul>
+<br>
 
-</div>
+✔ Fuse Open
 
-<div class="card">
+<br>
 
-<h3>Battery Heating</h3>
+✔ Protection Active
 
-<ul>
-
-<li>Weak Cell</li>
-<li>High Current</li>
-<li>MOSFET Heating</li>
-
-</ul>
+</p>
 
 </div>
+
 
 <div class="card">
 
 <h3>Cell Imbalance</h3>
 
-<ul>
+<p>
 
-<li>Weak Cell</li>
-<li>Balancing Circuit Fault</li>
-<li>Damaged Cell</li>
+✔ Weak Cell
 
-</ul>
+<br>
+
+✔ Balancing Circuit Fault
+
+<br>
+
+✔ Loose Sense Wire
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Temperature Error</h3>
+
+<p>
+
+✔ NTC Open
+
+<br>
+
+✔ NTC Short
+
+<br>
+
+✔ Sensor Damage
+
+</p>
 
 </div>
 
 </div>
 
 </section>
+
+
 
 <section>
 
@@ -254,121 +600,157 @@ Processes Data and Controls Protection Logic.
 
 <div class="card">
 
-<ol>
+<p>
 
-<li>Switch OFF Vehicle</li>
+Step 1
 
-<li>Disconnect Battery Pack</li>
+Check Battery Voltage
 
-<li>Wear HV Safety Gloves</li>
+<br><br>
 
-<li>Measure Total Battery Voltage</li>
+Step 2
 
-<li>Measure Every Cell Voltage</li>
+Check Individual Cell Voltage
 
-<li>Check Fuse</li>
+<br><br>
 
-<li>Inspect MOSFET</li>
+Step 3
 
-<li>Check NTC Sensor</li>
+Check Balance Wire Voltage
 
-<li>Check Current Sensor</li>
+<br><br>
 
-<li>Check CAN Communication</li>
+Step 4
 
-<li>Repair / Replace Faulty Components</li>
+Test MOSFET
 
-<li>Reassemble Battery</li>
+<br><br>
 
-<li>Charge Battery</li>
+Step 5
 
-<li>Road Test</li>
+Check NTC Sensor
 
-</ol>
+<br><br>
+
+Step 6
+
+Check CAN/UART Communication
+
+<br><br>
+
+Step 7
+
+Replace Faulty Component
+
+</p>
 
 </div>
 
 </section>
+
+
 
 <section>
 
-<h2>Typical Cell Voltage Guide</h2>
+<h2>Workshop Tips</h2>
 
 <div class="card">
 
-<table border="1" width="100%" cellpadding="10">
+<p>
 
-<tr>
+✔ Never Short B+ and B-
 
-<th>Condition</th>
+<br><br>
 
-<th>Voltage</th>
+✔ Disconnect Charger Before Repair
 
-</tr>
+<br><br>
 
-<tr>
+✔ Use Anti Static Precautions
 
-<td>Fully Charged</td>
+<br><br>
 
-<td>4.20V</td>
+✔ Check Every Balance Wire
 
-</tr>
+<br><br>
 
-<tr>
+✔ Use Genuine MOSFET
 
-<td>Normal</td>
-
-<td>3.60V - 4.00V</td>
-
-</tr>
-
-<tr>
-
-<td>Low Battery</td>
-
-<td>3.20V</td>
-
-</tr>
-
-<tr>
-
-<td>Critical</td>
-
-<td>Below 3.00V</td>
-
-</tr>
-
-</table>
+</p>
 
 </div>
 
 </section>
+
+
 
 <section>
 
-<h2>Technician Safety</h2>
+<h2>Mini Quiz</h2>
 
 <div class="card">
 
-<ul>
+<p>
 
-<li>⚠ Never Short Circuit Battery Terminals.</li>
+<b>Q1.</b> Full Form of BMS?
 
-<li>⚠ Use Only Insulated Tools.</li>
+<br>
 
-<li>⚠ Wear HV Gloves.</li>
+✅ Battery Management System
 
-<li>⚠ Never Open Live Battery.</li>
+<br><br>
 
-<li>⚠ Disconnect Charger Before Repair.</li>
+<b>Q2.</b> Which Component Controls Charging?
 
-<li>⚠ Check Insulation Before Assembly.</li>
+<br>
 
-</ul>
+✅ Charge MOSFET
+
+<br><br>
+
+<b>Q3.</b> Which Sensor Measures Temperature?
+
+<br>
+
+✅ NTC Sensor
+
+<br><br>
+
+<b>Q4.</b> Which Communication is Common in EV?
+
+<br>
+
+✅ CAN Bus
+
+</p>
 
 </div>
 
 </section>
+
+
+
+<section>
+
+<div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+
+<a href="battery.html" class="btn">
+
+⬅ Previous Module
+
+</a>
+
+<a href="motor.html" class="btn">
+
+Next Module ➜
+
+</a>
+
+</div>
+
+</section>
+
+
 
 <footer>
 
@@ -383,4 +765,5 @@ Processes Data and Controls Protection Logic.
 <script src="script.js"></script>
 
 </body>
+
 </html>
