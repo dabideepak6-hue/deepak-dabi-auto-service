@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Controller Repair | Deepak Dabi EV Repairing Course</title>
+<title>Controller Module | Deepak Dabi EV Repairing Course</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,192 +23,319 @@
 <nav>
 
 <a href="index.html">Home</a>
-<a href="battery.html">Battery</a>
-<a href="bms.html">BMS</a>
-<a href="motor.html">Motor</a>
-<a href="controller.html" class="active">Controller</a>
-<a href="charger.html">Charger</a>
+<a href="course.html">Course</a>
+<a href="quiz.html">Quiz</a>
+<a href="certificate.html">Certificate</a>
 
 </nav>
 
 </header>
 
-
 <section class="hero">
 
-<h1>🖥 EV Controller Repair Course</h1>
+<div>
+
+<h1>🖥 Module 4 : EV Controller</h1>
 
 <p>
-Learn MCU, VCU, Motor Controller Diagnosis & Repair
+
+Learn Controller Working,
+MCU, VCU, MOSFET,
+Throttle Signal &
+Controller Diagnosis.
+
 </p>
+
+<a href="#controller" class="btn">
+
+Start Learning
+
+</a>
+
+</div>
 
 </section>
 
-
-<section>
+<section id="controller">
 
 <h2>What is EV Controller?</h2>
 
+<div class="grid">
+
 <div class="card">
+
+<h3>Introduction</h3>
 
 <p>
 
-EV Controller is an electronic unit that controls power flow
-between Battery and Motor.
+The Controller is the brain of an Electric Vehicle.
 
-It receives signals from:
+It controls motor speed, torque and battery power.
 
 </p>
 
-<ul>
+</div>
 
-<li>✔ Throttle</li>
-<li>✔ Brake Sensor</li>
-<li>✔ BMS</li>
-<li>✔ Vehicle Control Unit (VCU)</li>
-<li>✔ Hall Sensors</li>
+<div class="card">
 
-</ul>
+<h3>Main Functions</h3>
+
+<p>
+
+✔ Motor Control
+
+<br><br>
+
+✔ Speed Control
+
+<br><br>
+
+✔ Torque Control
+
+<br><br>
+
+✔ Safety Protection
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Communication</h3>
+
+<p>
+
+✔ CAN Bus
+
+<br>
+
+✔ UART
+
+<br>
+
+✔ Bluetooth
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Input Signals</h3>
+
+<p>
+
+Throttle
+
+<br>
+
+Brake Switch
+
+<br>
+
+Side Stand
+
+<br>
+
+Ignition
+
+</p>
+
+</div>
 
 </div>
 
 </section>
 
-
 <section>
 
-<h2>Controller Functions</h2>
-
+<h2>MCU & VCU</h2>
 
 <div class="grid">
 
-
 <div class="card">
 
-<h3>Motor Control</h3>
+<h3>MCU</h3>
 
 <p>
-Controls 3 phase motor current and speed.
+
+Motor Control Unit
+
+<br><br>
+
+Controls Motor Phase Switching
+
 </p>
 
 </div>
 
-
 <div class="card">
 
-<h3>Power Management</h3>
+<h3>VCU</h3>
 
 <p>
-Controls battery power delivery according to load.
+
+Vehicle Control Unit
+
+<br><br>
+
+Controls Complete Vehicle Logic
+
 </p>
 
 </div>
-
-
-<div class="card">
-
-<h3>Regenerative Braking</h3>
-
-<p>
-Converts braking energy back into battery charging.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Protection System</h3>
-
-<p>
-Protects against over current, over voltage and temperature.
-</p>
-
-</div>
-
 
 </div>
 
 </section>
 
-
-
 <section>
 
-<h2>Controller Main Components</h2>
-
+<h2>Throttle Sensor</h2>
 
 <div class="grid">
 
-
 <div class="card">
 
-<h3>MOSFET</h3>
+<h3>Working</h3>
 
 <p>
-High current switching device controlling motor phases.
+
+Supply Voltage = 5V
+
+<br><br>
+
+Signal = 0.8V to 4.2V
+
 </p>
 
 </div>
 
-
 <div class="card">
 
-<h3>Microcontroller (MCU)</h3>
+<h3>Testing</h3>
 
 <p>
-Processes input signals and controls output.
+
+Use Multimeter
+
+<br>
+
+Rotate Throttle Slowly
+
+<br>
+
+Voltage Should Increase Smoothly
+
 </p>
 
 </div>
 
+</div>
+
+</section>
+
+<section>
+
+<h2>MOSFET Driver</h2>
+
+<div class="grid">
 
 <div class="card">
 
-<h3>Gate Driver</h3>
+<h3>MOSFET Function</h3>
 
 <p>
-Controls MOSFET ON/OFF switching.
+
+Switches Battery Power
+
+To Motor
+
+At High Speed.
+
 </p>
 
 </div>
 
-
 <div class="card">
 
-<h3>Capacitor</h3>
+<h3>Common Fault</h3>
 
 <p>
-Filters DC voltage and reduces electrical noise.
+
+✔ Short MOSFET
+
+<br>
+
+✔ Burn MOSFET
+
+<br>
+
+✔ Gate Driver Failure
+
 </p>
 
 </div>
 
+</div>
+
+</section>
+
+<!-- PART 2 START HERE -->
+  <section>
+
+<h2>DC-DC Converter</h2>
+
+<div class="grid">
 
 <div class="card">
 
-<h3>Current Sensor</h3>
+<h3>Purpose</h3>
 
 <p>
-Measures motor current consumption.
+
+Converts High Voltage Battery
+
+to 12V Output.
+
+<br><br>
+
+Supplies Power To
+
+Lights
+
+Horn
+
+Display
+
+ECU
+
 </p>
 
 </div>
 
-
 <div class="card">
 
-<h3>CAN Communication</h3>
+<h3>Output Check</h3>
 
 <p>
-Communicates with BMS and VCU.
+
+Input = Battery Voltage
+
+<br><br>
+
+Output = 12V to 14V DC
+
+<br><br>
+
+Check Using Multimeter
+
 </p>
 
 </div>
 
-
 </div>
-
 
 </section>
 
@@ -216,36 +343,147 @@ Communicates with BMS and VCU.
 
 <section>
 
-<h2>Controller Inspection Checklist</h2>
+<h2>CAN Bus Communication</h2>
 
+<div class="grid">
 
 <div class="card">
 
+<h3>CAN H & CAN L</h3>
 
-<ul>
+<p>
 
-<li>✅ Controller Physical Damage Check</li>
+High Speed Communication
 
-<li>✅ Connector Inspection</li>
+Between
 
-<li>✅ Battery Input Voltage Check</li>
+BMS
 
-<li>✅ Motor Phase Output Check</li>
+Controller
 
-<li>✅ Throttle Signal Check</li>
+Display
 
-<li>✅ Brake Signal Check</li>
+VCU
 
-<li>✅ CAN Communication Test</li>
-
-<li>✅ Temperature Sensor Check</li>
-
-
-</ul>
-
+</p>
 
 </div>
 
+<div class="card">
+
+<h3>Common Problems</h3>
+
+<p>
+
+✔ CAN Wire Open
+
+<br>
+
+✔ CAN Short
+
+<br>
+
+✔ Loose Connector
+
+<br>
+
+✔ ECU Communication Lost
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Controller Testing</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Power Supply</h3>
+
+<p>
+
+✔ Battery Voltage
+
+<br>
+
+✔ Ignition Voltage
+
+<br>
+
+✔ 5V Sensor Supply
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Signal Check</h3>
+
+<p>
+
+✔ Throttle Signal
+
+<br>
+
+✔ Brake Signal
+
+<br>
+
+✔ Hall Sensor Signal
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Motor Output</h3>
+
+<p>
+
+Check U
+
+<br>
+
+Check V
+
+<br>
+
+Check W
+
+Phase Output
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Temperature</h3>
+
+<p>
+
+Check Controller Heating
+
+<br>
+
+Cooling Condition
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -255,53 +493,67 @@ Communicates with BMS and VCU.
 
 <h2>Common Controller Faults</h2>
 
-
 <div class="grid">
 
-
-
 <div class="card">
 
-<h3>Vehicle Not Running</h3>
+<h3>Vehicle Not Starting</h3>
 
 <p>
 
-Possible Cause:
+✔ Ignition Missing
 
 <br>
-• Controller Supply Missing
+
+✔ Fuse Open
+
 <br>
-• MOSFET Damage
-<br>
-• CAN Communication Error
+
+✔ Controller Fault
 
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>Motor Jerking</h3>
+<h3>No Motor Drive</h3>
 
 <p>
 
-Possible Cause:
+✔ MOSFET Damage
 
 <br>
-• Hall Sensor Signal Problem
+
+✔ Hall Fault
+
 <br>
-• Phase Wire Issue
-<br>
-• Controller Fault
+
+✔ Motor Wiring
 
 </p>
 
 </div>
 
+<div class="card">
 
+<h3>Error Code</h3>
 
+<p>
+
+✔ CAN Fault
+
+<br>
+
+✔ Throttle Fault
+
+<br>
+
+✔ Over Voltage
+
+</p>
+
+</div>
 
 <div class="card">
 
@@ -309,183 +561,185 @@ Possible Cause:
 
 <p>
 
-Possible Cause:
+✔ Over Load
 
 <br>
-• Over Current
+
+✔ Cooling Issue
+
 <br>
-• Short MOSFET
-<br>
-• Poor Cooling
+
+✔ Internal Damage
 
 </p>
 
 </div>
 
+</div>
+
+</section>
 
 
+
+<section>
+
+<h2>Repair Procedure</h2>
 
 <div class="card">
-
-<h3>No Acceleration</h3>
 
 <p>
 
-Possible Cause:
+Step 1
 
-<br>
-• Throttle Signal Fault
-<br>
-• Brake Sensor Active
-<br>
-• VCU Lock
+Check Battery Voltage
+
+<br><br>
+
+Step 2
+
+Check Fuse
+
+<br><br>
+
+Step 3
+
+Check Ignition Signal
+
+<br><br>
+
+Step 4
+
+Check 5V Supply
+
+<br><br>
+
+Step 5
+
+Check Throttle Signal
+
+<br><br>
+
+Step 6
+
+Check Hall Sensor
+
+<br><br>
+
+Step 7
+
+Check MOSFET
+
+<br><br>
+
+Step 8
+
+Test Ride
 
 </p>
 
 </div>
 
-
-
-</div>
-
-
 </section>
-
 
 
 
 <section>
 
-
-<h2>Controller Testing Procedure</h2>
-
+<h2>Workshop Tips</h2>
 
 <div class="card">
 
+<p>
 
-<ol>
+✔ Never Connect Reverse Polarity
 
-<li>Switch OFF Vehicle</li>
+<br><br>
 
-<li>Disconnect Battery Supply</li>
+✔ Tighten All Connectors
 
-<li>Check Controller Input Voltage</li>
+<br><br>
 
-<li>Check Fuse and Relay</li>
+✔ Keep Controller Dry
 
-<li>Check MOSFET Short Circuit</li>
+<br><br>
 
-<li>Check Motor Phase Output</li>
+✔ Use Genuine Spare Parts
 
-<li>Check Throttle Voltage</li>
+<br><br>
 
-<li>Check Brake Signal</li>
+✔ Scan Error Codes Before Repair
 
-<li>Scan Error Codes</li>
-
-<li>Check CAN Communication</li>
-
-<li>Perform Road Test</li>
-
-
-</ol>
-
+</p>
 
 </div>
-
 
 </section>
 
 
 
-
 <section>
 
-
-<h2>Throttle Signal Test</h2>
-
+<h2>Mini Quiz</h2>
 
 <div class="card">
 
+<p>
 
-<table border="1" width="100%" cellpadding="10">
+<b>Q1.</b> MCU Full Form?
 
+<br>
 
-<tr>
+✅ Motor Control Unit
 
-<th>Wire</th>
+<br><br>
 
-<th>Voltage</th>
+<b>Q2.</b> VCU Full Form?
 
-</tr>
+<br>
 
+✅ Vehicle Control Unit
 
-<tr>
+<br><br>
 
-<td>5V Supply</td>
+<b>Q3.</b> CAN Means?
 
-<td>Approx 5V</td>
+<br>
 
-</tr>
+✅ Controller Area Network
 
+<br><br>
 
-<tr>
+<b>Q4.</b> Throttle Signal Range?
 
-<td>Ground</td>
+<br>
 
-<td>0V</td>
+✅ 0.8V to 4.2V
 
-</tr>
-
-
-<tr>
-
-<td>Signal</td>
-
-<td>0.8V - 4.2V</td>
-
-</tr>
-
-
-</table>
-
+</p>
 
 </div>
-
 
 </section>
 
 
 
-
-
 <section>
 
+<div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
 
-<h2>Technician Safety</h2>
+<a href="motor.html" class="btn">
 
+⬅ Previous Module
 
-<div class="card">
+</a>
 
+<a href="charger.html" class="btn">
 
-<ul>
+Next Module ➜
 
-<li>⚠ Disconnect Battery Before Repair</li>
-
-<li>⚠ Use Insulated Tools</li>
-
-<li>⚠ Avoid Short Circuit</li>
-
-<li>⚠ Check Capacitor Discharge Before Opening</li>
-
-<li>⚠ Use Safety Gloves</li>
-
-
-</ul>
-
+</a>
 
 </div>
-
 
 </section>
 
@@ -494,14 +748,14 @@ Possible Cause:
 <footer>
 
 <p>
+
 © 2026 Deepak Dabi EV Repairing Course
+
 </p>
 
 </footer>
 
-
 <script src="script.js"></script>
-
 
 </body>
 
