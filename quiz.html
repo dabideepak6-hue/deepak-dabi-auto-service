@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EV Technician Quiz | Deepak Dabi EV Repairing Course</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+⚡ DEEPAK DABI EV REPAIRING COURSE
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="course.html">Course</a>
+<a href="quiz.html" class="active">Quiz</a>
+<a href="certificate.html">Certificate</a>
+
+</nav>
+
+</header>
+
+
+
+
+<section class="hero">
+
+<h1>📝 EV Technician Final Quiz</h1>
+
+<p>
+Test Your Electric Vehicle Repair Knowledge
+</p>
+
+</section>
+
+
+
+
+
+<section>
+
+
+<div class="card">
+
+
+<h2>Question 1</h2>
+
+<p>
+1. EV Battery में सुरक्षा के लिए कौन सा सिस्टम उपयोग होता है?
+</p>
+
+
+<label>
+<input type="radio" name="q1" value="0">
+Motor Controller
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="1">
+BMS (Battery Management System)
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="q1" value="0">
+Charger
+</label>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>Question 2</h2>
+
+<p>
+2. BLDC Motor में Rotor Position जानने के लिए क्या उपयोग होता है?
+</p>
+
+
+<label>
+
+<input type="radio" name="q2" value="1">
+
+Hall Sensor
+
+</label>
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q2" value="0">
+
+Fuse
+
+</label>
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q2" value="0">
+
+Relay
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>Question 3</h2>
+
+<p>
+3. EV Controller का मुख्य कार्य क्या है?
+</p>
+
+
+<label>
+
+<input type="radio" name="q3" value="1">
+
+Battery Power को Motor तक Control करना
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q3" value="0">
+
+Tyre Pressure Control
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q3" value="0">
+
+Brake Oil Change
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>Question 4</h2>
+
+<p>
+4. Lithium Battery का एक Cell Full Charge Voltage कितना होता है?
+</p>
+
+
+<label>
+
+<input type="radio" name="q4" value="1">
+
+4.2 Volt
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q4" value="0">
+
+12 Volt
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q4" value="0">
+
+24 Volt
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>Question 5</h2>
+
+<p>
+5. EV में CAN Communication किसके लिए उपयोग होता है?
+</p>
+
+
+<label>
+
+<input type="radio" name="q5" value="1">
+
+Electronic Units Communication
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q5" value="0">
+
+Tyre Repair
+
+</label>
+
+
+<br>
+
+
+<label>
+
+<input type="radio" name="q5" value="0">
+
+Paint Work
+
+</label>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<button class="btn" onclick="submitQuiz()">
+
+Submit Quiz
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div id="result" class="card">
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Deepak Dabi EV Repairing Course
+</p>
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+function submitQuiz(){
+
+
+let score=0;
+
+
+let questions=document.querySelectorAll("input[type='radio']:checked");
+
+
+
+questions.forEach(answer=>{
+
+
+score += Number(answer.value);
+
+
+});
+
+
+
+let result=document.getElementById("result");
+
+
+
+let percentage=(score/5)*100;
+
+
+
+if(percentage>=60){
+
+
+result.innerHTML=
+
+`
+<h2>🎉 Congratulations</h2>
+
+<p>
+Your Score: ${score}/5
+</p>
+
+<p>
+You Passed EV Technician Quiz.
+</p>
+
+<a href="certificate.html" class="btn">
+Generate Certificate
+</a>
+`;
+
+
+
+localStorage.setItem("quizPass","YES");
+
+
+
+}
+
+else{
+
+
+result.innerHTML=
+
+`
+
+<h2>❌ Try Again</h2>
+
+<p>
+Your Score: ${score}/5
+</p>
+
+<p>
+Minimum 60% Required.
+</p>
+
+`;
+
+
+
+}
+
+
+}
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
