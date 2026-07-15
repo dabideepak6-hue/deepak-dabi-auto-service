@@ -5,6 +5,7 @@
 
 console.log("Deepak Dabi EV Repairing Course Loaded");
 
+
 // ----------------------------
 // Welcome Message
 // ----------------------------
@@ -18,6 +19,7 @@ alert("⚡ Welcome to Deepak Dabi EV Repairing Course");
 },500);
 
 });
+
 
 // ----------------------------
 // Smooth Scroll
@@ -45,6 +47,7 @@ behavior:"smooth"
 
 });
 
+
 // ----------------------------
 // Search Course
 // ----------------------------
@@ -59,9 +62,11 @@ let value=input.value.toLowerCase();
 
 let cards=document.querySelectorAll(".card");
 
+
 cards.forEach(card=>{
 
 let text=card.innerText.toLowerCase();
+
 
 if(text.includes(value)){
 
@@ -77,9 +82,9 @@ card.style.display="none";
 
 }
 
-// Auto Search
 
 const searchBox=document.getElementById("search");
+
 
 if(searchBox){
 
@@ -87,11 +92,14 @@ searchBox.addEventListener("keyup",searchCourse);
 
 }
 
+
+
 // ----------------------------
 // Dark / Light Mode
 // ----------------------------
 
 const modeButton=document.createElement("button");
+
 
 modeButton.innerHTML="🌙";
 
@@ -108,16 +116,22 @@ modeButton.style.background="#00d084";
 modeButton.style.color="#fff";
 modeButton.style.zIndex="9999";
 
+
 document.body.appendChild(modeButton);
+
 
 let dark=true;
 
+
 modeButton.onclick=function(){
+
 
 if(dark){
 
+
 document.body.style.background="#ffffff";
 document.body.style.color="#111111";
+
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -126,14 +140,18 @@ card.style.color="#111";
 
 });
 
+
 modeButton.innerHTML="☀️";
 
 dark=false;
 
+
 }else{
+
 
 document.body.style.background="#0d1117";
 document.body.style.color="#ffffff";
+
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -142,19 +160,24 @@ card.style.color="#ffffff";
 
 });
 
+
 modeButton.innerHTML="🌙";
 
 dark=true;
 
+
 }
 
 };
+
+
 
 // ----------------------------
 // Back To Top Button
 // ----------------------------
 
 const topBtn=document.createElement("button");
+
 
 topBtn.innerHTML="⬆";
 
@@ -172,9 +195,13 @@ topBtn.style.cursor="pointer";
 topBtn.style.display="none";
 topBtn.style.zIndex="9999";
 
+
 document.body.appendChild(topBtn);
 
+
+
 window.addEventListener("scroll",()=>{
+
 
 if(window.scrollY>400){
 
@@ -188,6 +215,8 @@ topBtn.style.display="none";
 
 });
 
+
+
 topBtn.onclick=function(){
 
 window.scrollTo({
@@ -200,56 +229,92 @@ behavior:"smooth"
 
 };
 
+
+
 // ----------------------------
 // Fade Animation
 // ----------------------------
 
 const observer=new IntersectionObserver(entries=>{
 
+
 entries.forEach(entry=>{
+
 
 if(entry.isIntersecting){
 
+
 entry.target.style.opacity="1";
+
 entry.target.style.transform="translateY(0px)";
+
 
 }
 
 });
 
+
 });
+
+
 
 document.querySelectorAll(".card").forEach(card=>{
 
+
 card.style.opacity="0";
+
 card.style.transform="translateY(40px)";
+
 card.style.transition=".7s";
+
 
 observer.observe(card);
 
+
 });
 
+
+
+
 // ----------------------------
-// Progress Save
+// Progress Save (FIXED)
 // ----------------------------
 
 function saveProgress(module){
 
-localStorage.setItem("lastModule",module);
+localStorage.setItem("lastModule", module);
 
 }
 
+
+
 document.querySelectorAll(".card").forEach(card=>{
 
-card.addEventListener("click",()=>{
+
+card.addEventListener("click",function(e){
+
+
+// Ignore Start Module Button Click
+
+if(e.target.closest("a")){
+
+return;
+
+}
+
 
 saveProgress(card.innerText);
 
-});
 
 });
 
-const last=localStorage.getItem("lastModule");
+
+});
+
+
+
+const last = localStorage.getItem("lastModule");
+
 
 if(last){
 
@@ -257,11 +322,16 @@ console.log("Last Module :",last);
 
 }
 
+
+
+
 // ----------------------------
 // Footer Year
 // ----------------------------
 
+
 const footer=document.querySelector("footer");
+
 
 if(footer){
 
@@ -269,9 +339,13 @@ footer.innerHTML+=`<br><br>© ${new Date().getFullYear()} Deepak Dabi EV Repairi
 
 }
 
+
+
+
 // ----------------------------
 // Online / Offline
 // ----------------------------
+
 
 window.addEventListener("offline",()=>{
 
@@ -279,11 +353,14 @@ alert("⚠ Internet Disconnected");
 
 });
 
+
 window.addEventListener("online",()=>{
 
 alert("✅ Internet Connected");
 
 });
+
+
 
 // ----------------------------
 // End
