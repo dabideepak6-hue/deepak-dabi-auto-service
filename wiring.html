@@ -6,590 +6,677 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EV Wiring Diagram | Deepak Dabi EV Repairing Course</title>
+<title>EV Wiring Module | Deepak Dabi EV Repairing Course</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="logo">
-⚡ DEEPAK DABI EV REPAIRING COURSE
-</div>
 
+⚡ DEEPAK DABI EV REPAIRING COURSE
+
+</div>
 
 <nav>
 
 <a href="index.html">Home</a>
-<a href="battery.html">Battery</a>
-<a href="bms.html">BMS</a>
-<a href="motor.html">Motor</a>
-<a href="controller.html">Controller</a>
-<a href="charger.html">Charger</a>
-<a href="wiring.html" class="active">Wiring</a>
+
+<a href="course.html">Course</a>
+
+<a href="quiz.html">Quiz</a>
+
+<a href="certificate.html">Certificate</a>
 
 </nav>
-
 
 </header>
 
 
 
-
 <section class="hero">
 
-<h1>📡 EV Wiring & Circuit Diagnosis</h1>
+<div>
+
+<h1>📡 Module 6 : EV Wiring</h1>
 
 <p>
-Learn EV Wiring, Connector Testing & Fault Finding
+
+Learn Complete EV Wiring,
+CAN Communication,
+Connector Testing,
+Fuse Checking &
+Fault Diagnosis
+
 </p>
 
-</section>
+<a href="#wiring" class="btn">
 
+Start Learning
 
-
-
-
-<section>
-
-<h2>EV Power Flow Diagram</h2>
-
-
-<div class="card">
-
-
-<pre>
-
-       AC SUPPLY
-           |
-           |
-        CHARGER
-           |
-           |
-        BATTERY PACK
-           |
-           |
-          BMS
-           |
-           |
-        CONTROLLER
-           |
-           |
-          MOTOR
-
-
-</pre>
-
+</a>
 
 </div>
 
-
 </section>
 
 
 
+<section id="wiring">
 
-
-<section>
-
-
-<h2>Main EV Wiring System</h2>
-
+<h2>What is EV Wiring?</h2>
 
 <div class="grid">
 
-
-
 <div class="card">
 
-<h3>🔋 Battery Wiring</h3>
+<h3>Introduction</h3>
 
 <p>
 
-Battery Positive (+)
-
-Battery Negative (-)
-
-HV Fuse
-
-Main Connector
-
-BMS Connection
+EV Wiring connects all
+electrical components like
+Battery, Controller,
+Motor and Charger.
 
 </p>
 
 </div>
 
-
-
-
-
 <div class="card">
 
-<h3>⚡ Motor Wiring</h3>
+<h3>Main Wiring</h3>
 
 <p>
 
-Three Phase Wire:
-
-<br>
-U Phase
-
-<br>
-V Phase
-
-<br>
-W Phase
+✔ Battery Cable
 
 <br><br>
 
-Hall Sensor:
+✔ Motor Cable
 
-<br>
-5V
+<br><br>
 
-<br>
-Ground
+✔ Charger Cable
 
-<br>
-Signal Lines
+<br><br>
+
+✔ Signal Wiring
 
 </p>
 
 </div>
-
-
-
-
-
 
 <div class="card">
 
-<h3>🖥 Controller Wiring</h3>
+<h3>Voltage Types</h3>
 
 <p>
 
-Battery Input
+✔ High Voltage
 
-Motor Output
+<br>
 
-Throttle Signal
+✔ Low Voltage
 
-Brake Signal
+<br>
 
-CAN Communication
+✔ 12V Supply
+
+<br>
+
+✔ 5V Signal
 
 </p>
 
 </div>
-
-
-
-
-
-
 
 <div class="card">
 
-<h3>🔌 Charger Wiring</h3>
+<h3>Safety</h3>
 
 <p>
 
-AC Input
+Always Disconnect Battery
 
-DC Output
-
-Communication Line
-
-Ground
-
-Charging Connector
+Before Repair.
 
 </p>
 
 </div>
 
-
-
 </div>
-
 
 </section>
 
 
 
-
-
-
-
 <section>
 
-
-<h2>Connector Inspection</h2>
-
-
-<div class="card">
-
-
-<ul>
-
-
-<li>✅ Check Loose Pins</li>
-
-<li>✅ Check Burn Marks</li>
-
-<li>✅ Check Water Entry</li>
-
-<li>✅ Check Pin Corrosion</li>
-
-<li>✅ Check Wire Damage</li>
-
-<li>✅ Check Connector Lock</li>
-
-
-</ul>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-
-<h2>CAN Communication System</h2>
-
+<h2>Connector Types</h2>
 
 <div class="grid">
 
-
 <div class="card">
 
-<h3>CAN-H</h3>
+<h3>Power Connector</h3>
 
 <p>
 
-High Communication Line
+High Current Connector
 
-Normally around 2.5V - 3.5V
+For Battery Output
 
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>CAN-L</h3>
+<h3>Signal Connector</h3>
 
 <p>
-
-Low Communication Line
-
-Normally around 1.5V - 2.5V
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>CAN Failure</h3>
-
-<p>
-
-Symptoms:
-
-<br>
-• Vehicle Not ON
-
-<br>
-• Communication Error
-
-<br>
-• BMS Not Detected
-
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-
-<h2>Sensor Wiring</h2>
-
-
-<div class="grid">
-
-
-
-<div class="card">
-
-<h3>Throttle Sensor</h3>
-
-<p>
-
-5V Supply
-
-<br>
-
-Ground
-
-<br>
-
-Signal Output
-
-<br>
-
-Approx 0.8V - 4.2V
-
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h3>Brake Sensor</h3>
-
-<p>
-
-Brake Switch Signal
-
-<br>
-
-5V Supply
-
-<br>
-
-Ground
-
-</p>
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-<h3>Temperature Sensor</h3>
-
-<p>
-
-NTC Sensor
-
-<br>
-
-Temperature Feedback
-
-<br>
-
-Battery Protection
-
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section>
-
-
-<h2>Wiring Fault Diagnosis</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Vehicle Not ON</h3>
-
-<p>
-
-Check:
-
-<br>
-
-Battery Voltage
-
-<br>
-
-Fuse
-
-<br>
-
-Main Connector
-
-<br>
-
-CAN Line
-
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h3>Motor Not Working</h3>
-
-<p>
-
-Check:
-
-<br>
-
-Phase Wire
-
-<br>
 
 Hall Sensor
 
-<br>
+Throttle
 
-Controller Output
+Brake Switch
+
+Temperature Sensor
 
 </p>
 
 </div>
-
-
-
-
 
 <div class="card">
 
-<h3>Charging Problem</h3>
+<h3>Charging Connector</h3>
 
 <p>
 
-Check:
-
-<br>
-
-Charging Port
-
-<br>
-
-BMS Signal
-
-<br>
-
-Charger Output
+Battery Charging Port
 
 </p>
 
 </div>
 
+<div class="card">
 
+<h3>CAN Connector</h3>
+
+<p>
+
+Communication Between
+
+BMS
+
+Controller
+
+Display
+
+</p>
 
 </div>
 
+</div>
 
 </section>
-
-
-
-
 
 
 
 <section>
 
+<h2>Fuse & Relay</h2>
 
-<h2>Technician Testing Tools</h2>
-
+<div class="grid">
 
 <div class="card">
 
+<h3>Main Fuse</h3>
 
-<ul>
+<p>
 
-<li>🔧 Digital Multimeter</li>
+Protects Battery
 
-<li>⚡ Clamp Meter</li>
+Against Short Circuit
 
-<li>📡 CAN Analyzer</li>
-
-<li>🔋 Battery Tester</li>
-
-<li>🖥 Diagnostic Scanner</li>
-
-<li>🧤 HV Safety Gloves</li>
-
-
-</ul>
-
+</p>
 
 </div>
 
+<div class="card">
+
+<h3>Relay</h3>
+
+<p>
+
+Controls High Current
+
+Using Low Current Signal
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
 
+<section>
+
+<h2>Continuity Test</h2>
+
+<div class="card">
+
+<p>
+
+Step 1
+
+Disconnect Battery
+
+<br><br>
+
+Step 2
+
+Set Multimeter to Continuity Mode
+
+<br><br>
+
+Step 3
+
+Check Both Ends of Wire
+
+<br><br>
+
+Beep = Good Wire
+
+No Beep = Open Wire
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- PART 2 START HERE -->
+       <section>
+
+<h2>CAN Bus Communication</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>CAN High (CAN H)</h3>
+
+<p>
+
+High Speed Communication Line
+
+<br><br>
+
+Works With CAN Low
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>CAN Low (CAN L)</h3>
+
+<p>
+
+Transfers Data Between
+
+BMS
+
+Controller
+
+Display
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Advantages</h3>
+
+<p>
+
+✔ Fast Communication
+
+<br>
+
+✔ Reliable Network
+
+<br>
+
+✔ Low Wiring
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Testing</h3>
+
+<p>
+
+✔ Check Voltage
+
+<br>
+
+✔ Check Resistance
+
+<br>
+
+✔ Scan Communication Error
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Common Wiring Faults</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Open Wire</h3>
+
+<p>
+
+✔ Broken Cable
+
+<br>
+
+✔ Loose Connector
+
+<br>
+
+✔ Corrosion
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Short Circuit</h3>
+
+<p>
+
+✔ Wire Touching Body
+
+<br>
+
+✔ Melted Insulation
+
+<br>
+
+✔ Damaged Harness
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Voltage Drop</h3>
+
+<p>
+
+✔ Loose Terminal
+
+<br>
+
+✔ Weak Connection
+
+<br>
+
+✔ Oxidation
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Connector Damage</h3>
+
+<p>
+
+✔ Bent Pin
+
+<br>
+
+✔ Water Entry
+
+<br>
+
+✔ Burnt Connector
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Short Circuit Diagnosis</h2>
+
+<div class="card">
+
+<p>
+
+Step 1
+
+Disconnect Battery
+
+<br><br>
+
+Step 2
+
+Inspect Wiring Harness
+
+<br><br>
+
+Step 3
+
+Check Fuse
+
+<br><br>
+
+Step 4
+
+Measure Resistance
+
+<br><br>
+
+Step 5
+
+Repair or Replace Damaged Wire
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Repair Procedure</h2>
+
+<div class="card">
+
+<p>
+
+✔ Use Correct Wire Gauge
+
+<br><br>
+
+✔ Use Heat Shrink Sleeve
+
+<br><br>
+
+✔ Crimp Connectors Properly
+
+<br><br>
+
+✔ Avoid Loose Joint
+
+<br><br>
+
+✔ Secure Harness With Cable Tie
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Workshop Tips</h2>
+
+<div class="card">
+
+<p>
+
+✔ Disconnect Battery Before Repair
+
+<br><br>
+
+✔ Never Twist Wires Together
+
+<br><br>
+
+✔ Use Quality Connectors
+
+<br><br>
+
+✔ Check Fuse Rating
+
+<br><br>
+
+✔ Protect Wiring From Water
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Mini Quiz</h2>
+
+<div class="card">
+
+<p>
+
+<b>Q1.</b> Which Wire Carries Communication?
+
+<br>
+
+✅ CAN H & CAN L
+
+<br><br>
+
+<b>Q2.</b> Which Tool Checks Continuity?
+
+<br>
+
+✅ Multimeter
+
+<br><br>
+
+<b>Q3.</b> What Protects Against Short Circuit?
+
+<br>
+
+✅ Fuse
+
+<br><br>
+
+<b>Q4.</b> First Step Before Wiring Repair?
+
+<br>
+
+✅ Disconnect Battery
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+
+<a href="charger.html" class="btn">
+
+⬅ Previous Module
+
+</a>
+
+<a href="error-codes.html" class="btn">
+
+Next Module ➜
+
+</a>
+
+</div>
+
+</section>
 
 
 
 <footer>
 
 <p>
+
 © 2026 Deepak Dabi EV Repairing Course
+
 </p>
 
 </footer>
 
-
 <script src="script.js"></script>
-
 
 </body>
 
