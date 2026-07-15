@@ -6,34 +6,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EV Charger Repair | Deepak Dabi EV Repairing Course</title>
+<title>EV Charger Module | Deepak Dabi EV Repairing Course</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="logo">
-⚡ DEEPAK DABI EV REPAIRING COURSE
-</div>
 
+⚡ DEEPAK DABI EV REPAIRING COURSE
+
+</div>
 
 <nav>
 
 <a href="index.html">Home</a>
-<a href="battery.html">Battery</a>
-<a href="bms.html">BMS</a>
-<a href="motor.html">Motor</a>
-<a href="controller.html">Controller</a>
-<a href="charger.html" class="active">Charger</a>
+
+<a href="course.html">Course</a>
+
+<a href="quiz.html">Quiz</a>
+
+<a href="certificate.html">Certificate</a>
 
 </nav>
-
 
 </header>
 
@@ -41,553 +40,703 @@
 
 <section class="hero">
 
-<h1>🔌 EV Charger Repair Course</h1>
+<div>
 
-<p>
-Learn EV Charger Diagnosis, Testing and Repair
-</p>
-
-</section>
-
-
-
-
-<section>
-
-<h2>What is an EV Charger?</h2>
-
-
-<div class="card">
+<h1>🔌 Module 5 : EV Charger</h1>
 
 <p>
 
-EV Charger converts AC power from electricity supply
-into controlled DC power to charge the vehicle battery.
+Learn EV Charger Working,
+AC to DC Conversion,
+SMPS Circuit,
+Charging Process &
+Fault Diagnosis
 
 </p>
 
+<a href="#charger" class="btn">
 
-<ul>
+Start Learning
 
-<li>✔ AC Input Protection</li>
-<li>✔ AC to DC Conversion</li>
-<li>✔ Charging Control</li>
-<li>✔ Battery Communication</li>
-<li>✔ Safety Protection</li>
-
-</ul>
+</a>
 
 </div>
 
-
 </section>
 
 
 
+<section id="charger">
 
-<section>
-
-
-<h2>EV Charger Working Process</h2>
-
+<h2>What is EV Charger?</h2>
 
 <div class="grid">
 
-
 <div class="card">
 
-<h3>1. AC Input</h3>
+<h3>Introduction</h3>
 
 <p>
 
-230V AC supply enters charger through protection circuit.
+An EV Charger converts
+AC supply into DC
+to charge the battery safely.
 
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>2. Rectifier</h3>
+<h3>Main Types</h3>
 
 <p>
 
-Converts AC voltage into DC voltage.
+✔ Portable Charger
+
+<br><br>
+
+✔ Fast Charger
+
+<br><br>
+
+✔ On Board Charger
+
+<br><br>
+
+✔ Smart Charger
 
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>3. PFC Circuit</h3>
+<h3>Main Parts</h3>
 
 <p>
 
-Improves power efficiency and reduces harmonic losses.
+✔ AC Input
+
+<br>
+
+✔ Fuse
+
+<br>
+
+✔ Bridge Rectifier
+
+<br>
+
+✔ SMPS
+
+<br>
+
+✔ Transformer
+
+<br>
+
+✔ Output Cable
 
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>4. SMPS Section</h3>
+<h3>Output</h3>
 
 <p>
 
-Controls high frequency switching and voltage conversion.
+Battery Voltage Based
+
+48V
+
+60V
+
+72V
+
+96V
 
 </p>
 
 </div>
 
-
-
-<div class="card">
-
-<h3>5. Output Section</h3>
-
-<p>
-
-Provides regulated DC output to battery.
-
-</p>
-
 </div>
-
-
-
-<div class="card">
-
-<h3>6. Communication</h3>
-
-<p>
-
-Communicates with BMS for safe charging.
-
-</p>
-
-</div>
-
-
-</div>
-
 
 </section>
 
 
 
-
-
 <section>
 
-
-<h2>Charger Main Components</h2>
-
+<h2>AC To DC Conversion</h2>
 
 <div class="grid">
 
-
 <div class="card">
 
-<h3>Fuse</h3>
+<h3>Input</h3>
 
 <p>
-Protects charger from input short circuit.
+
+230V AC
+
+50Hz
+
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>MOSFET</h3>
+<h3>Bridge Rectifier</h3>
 
 <p>
-Controls high frequency switching operation.
+
+Converts AC into DC
+
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>Transformer</h3>
+<h3>Filter Capacitor</h3>
 
 <p>
-Provides voltage isolation and conversion.
+
+Removes Ripple Voltage
+
 </p>
 
 </div>
 
-
-
 <div class="card">
 
-<h3>Capacitor</h3>
+<h3>SMPS</h3>
 
 <p>
-Filters DC voltage ripple.
+
+Provides Stable DC Output
+
 </p>
 
 </div>
 
-
-
-<div class="card">
-
-<h3>Cooling Fan</h3>
-
-<p>
-Controls charger temperature.
-</p>
-
 </div>
-
-
-
-<div class="card">
-
-<h3>Control IC</h3>
-
-<p>
-Manages charging operation.
-</p>
-
-</div>
-
-
-</div>
-
 
 </section>
 
 
 
-
-
 <section>
 
+<h2>Charging Stages</h2>
 
-<h2>Charger Inspection Checklist</h2>
-
+<div class="grid">
 
 <div class="card">
 
+<h3>CC Mode</h3>
 
-<ul>
+<p>
 
-<li>✅ Input AC Voltage Check</li>
+Constant Current Charging
 
-<li>✅ Fuse Inspection</li>
-
-<li>✅ Output DC Voltage Test</li>
-
-<li>✅ Charging Connector Check</li>
-
-<li>✅ Cooling Fan Operation</li>
-
-<li>✅ PCB Burn Mark Inspection</li>
-
-<li>✅ Communication Line Check</li>
-
-<li>✅ Water Damage Check</li>
-
-
-</ul>
-
+</p>
 
 </div>
 
+<div class="card">
+
+<h3>CV Mode</h3>
+
+<p>
+
+Constant Voltage Charging
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Cut Off</h3>
+
+<p>
+
+Stops Charging Automatically
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Safety</h3>
+
+<p>
+
+Protects Battery From
+Over Charging
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
 
+<section>
+
+<h2>LED Indicators</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Green LED</h3>
+
+<p>
+
+Power ON
+
+Charging Complete
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Red LED</h3>
+
+<p>
+
+Charging Running
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Blinking LED</h3>
+
+<p>
+
+Fault Detected
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>No LED</h3>
+
+<p>
+
+Fuse
+
+Cable
+
+PCB
+
+Input Fault
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PART 2 START HERE -->
+  <section>
+
+<h2>Charger Testing</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Input Test</h3>
+
+<p>
+
+✔ Check 230V AC Input
+
+<br><br>
+
+✔ Check Fuse
+
+<br><br>
+
+✔ Check Input Cable
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Output Test</h3>
+
+<p>
+
+✔ Measure DC Voltage
+
+<br><br>
+
+✔ Check Output Current
+
+<br><br>
+
+✔ Verify Charging Voltage
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <section>
 
+<h2>SMPS Circuit</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Main Components</h3>
+
+<p>
+
+✔ PWM IC
+
+<br>
+
+✔ MOSFET
+
+<br>
+
+✔ Transformer
+
+<br>
+
+✔ Optocoupler
+
+<br>
+
+✔ Output Diode
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Common Problems</h3>
+
+<p>
+
+✔ Burn MOSFET
+
+<br>
+
+✔ Faulty Capacitor
+
+<br>
+
+✔ Open Fuse
+
+<br>
+
+✔ Damaged Transformer
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
 
 <h2>Common Charger Faults</h2>
 
-
-
 <div class="grid">
 
-
-
 <div class="card">
 
-<h3>Charger Not ON</h3>
+<h3>No Power</h3>
 
 <p>
 
-Possible Causes:
+✔ Fuse Open
 
 <br>
-• Input Fuse Open
+
+✔ AC Cable Fault
 
 <br>
-• AC Supply Missing
 
-<br>
-• PCB Fault
-
-<br>
-• Control IC Damage
+✔ PCB Damage
 
 </p>
 
 </div>
 
-
-
-
-
 <div class="card">
 
-<h3>Charging Stops Suddenly</h3>
+<h3>No Charging</h3>
 
 <p>
 
-Possible Causes:
+✔ Output Voltage Missing
 
 <br>
-• Over Temperature
+
+✔ BMS Communication Fault
 
 <br>
-• Fan Not Working
 
-<br>
-• BMS Protection
+✔ Charger PCB Fault
 
 </p>
 
 </div>
 
-
-
-
-
-
 <div class="card">
 
-<h3>Low Charging Current</h3>
+<h3>Over Heating</h3>
 
 <p>
 
-Possible Causes:
+✔ Cooling Fan Fault
 
 <br>
-• Weak Components
+
+✔ Over Load
 
 <br>
-• Output Stage Problem
 
-<br>
-• Communication Error
+✔ Air Vent Blocked
 
 </p>
 
 </div>
 
-
-
-
-
-
 <div class="card">
 
-<h3>Charger Heating</h3>
+<h3>LED Blinking</h3>
 
 <p>
 
-Possible Causes:
+✔ Battery Error
 
 <br>
-• Fan Failure
+
+✔ Short Circuit
 
 <br>
-• MOSFET Heating
 
-<br>
-• Over Load
+✔ Internal Fault
 
 </p>
 
 </div>
 
-
-
-
 </div>
-
 
 </section>
-
-
-
 
 
 
 <section>
 
-
-<h2>Charger Testing Procedure</h2>
-
+<h2>Repair Procedure</h2>
 
 <div class="card">
 
+<p>
 
-<ol>
+Step 1
 
-<li>Disconnect Charger From Vehicle</li>
+Check AC Supply
 
-<li>Check AC Input Supply</li>
+<br><br>
 
-<li>Check Fuse Continuity</li>
+Step 2
 
-<li>Check PCB Components</li>
+Check Fuse
 
-<li>Check Capacitor Condition</li>
+<br><br>
 
-<li>Check MOSFET Short Test</li>
+Step 3
 
-<li>Measure Output Voltage</li>
+Measure DC Output
 
-<li>Check Charging Communication</li>
+<br><br>
 
-<li>Perform Charging Test</li>
+Step 4
 
+Check MOSFET
 
-</ol>
+<br><br>
 
+Step 5
+
+Check Capacitors
+
+<br><br>
+
+Step 6
+
+Inspect Transformer
+
+<br><br>
+
+Step 7
+
+Test Charging With Battery
+
+</p>
 
 </div>
 
-
 </section>
-
-
 
 
 
 <section>
 
-
-<h2>Basic Charger Voltage Guide</h2>
-
+<h2>Workshop Tips</h2>
 
 <div class="card">
 
+<p>
 
-<table border="1" width="100%" cellpadding="10">
+✔ Always Disconnect AC Before Opening Charger
 
+<br><br>
 
-<tr>
+✔ Discharge High Voltage Capacitors
 
-<th>Battery System</th>
+<br><br>
 
-<th>Full Charge Voltage</th>
+✔ Use Original Components
 
-</tr>
+<br><br>
 
+✔ Check Cooling Fan
 
-<tr>
+<br><br>
 
-<td>48V Battery</td>
+✔ Never Short Output Wires
 
-<td>54.6V</td>
-
-</tr>
-
-
-<tr>
-
-<td>60V Battery</td>
-
-<td>67.2V</td>
-
-</tr>
-
-
-<tr>
-
-<td>72V Battery</td>
-
-<td>84V</td>
-
-</tr>
-
-
-</table>
-
+</p>
 
 </div>
 
-
 </section>
-
-
-
 
 
 
 <section>
 
-
-<h2>Technician Safety</h2>
-
+<h2>Mini Quiz</h2>
 
 <div class="card">
 
+<p>
 
-<ul>
+<b>Q1.</b> Charger converts?
 
+<br>
 
-<li>⚠ Charger Contains High Voltage</li>
+✅ AC to DC
 
-<li>⚠ Discharge Capacitors Before Repair</li>
+<br><br>
 
-<li>⚠ Use Insulated Tools</li>
+<b>Q2.</b> CC Means?
 
-<li>⚠ Do Not Touch Live PCB</li>
+<br>
 
-<li>⚠ Wear Safety Equipment</li>
+✅ Constant Current
 
+<br><br>
 
-</ul>
+<b>Q3.</b> CV Means?
 
+<br>
+
+✅ Constant Voltage
+
+<br><br>
+
+<b>Q4.</b> Which Component Converts AC to DC?
+
+<br>
+
+✅ Bridge Rectifier
+
+</p>
 
 </div>
 
-
 </section>
 
+
+
+<section>
+
+<div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+
+<a href="controller.html" class="btn">
+
+⬅ Previous Module
+
+</a>
+
+<a href="wiring.html" class="btn">
+
+Next Module ➜
+
+</a>
+
+</div>
+
+</section>
 
 
 
 <footer>
 
 <p>
+
 © 2026 Deepak Dabi EV Repairing Course
+
 </p>
 
 </footer>
 
-
 <script src="script.js"></script>
-
 
 </body>
 
