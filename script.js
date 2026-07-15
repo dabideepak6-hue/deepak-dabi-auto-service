@@ -1,4 +1,7 @@
-window.CESIUM_BASE_URL = "https://cesium.com/downloads/cesiumjs/releases/1.133/Build/Cesium/";
+// script.js
+
+window.CESIUM_BASE_URL =
+"https://cesium.com/downloads/cesiumjs/releases/1.133/Build/Cesium/";
 
 const viewer = new Cesium.Viewer("cesiumContainer", {
     animation: false,
@@ -6,40 +9,41 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
     geocoder: false,
     homeButton: true,
     sceneModePicker: true,
-    navigationHelpButton: true,
-    fullscreenButton: false,
-    baseLayerPicker: true
+    baseLayerPicker: true,
+    navigationHelpButton: false,
+    fullscreenButton: false
 });
 
-// Initial view (Jodhpur)
-viewer.camera.flyTo({
+// Home Location (Jodhpur)
+viewer.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(
         73.0243,
         26.2389,
-        25000
+        2500000
     )
 });
 
-// Current Location
+// My Location
 document.getElementById("locationBtn").onclick = function () {
 
     if (!navigator.geolocation) {
-        alert("Geolocation not supported.");
+        alert("Location not supported");
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition(function (pos) {
 
-        const lon = position.coords.longitude;
-        const lat = position.coords.latitude;
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
 
         viewer.entities.add({
             position: Cesium.Cartesian3.fromDegrees(lon, lat),
             point: {
-                pixelSize: 12
+                pixelSize: 12,
+                color: Cesium.Color.RED
             },
             label: {
-                text: "You are here",
+                text: "My Location",
                 pixelOffset: new Cesium.Cartesian2(0, -25)
             }
         });
@@ -48,7 +52,7 @@ document.getElementById("locationBtn").onclick = function () {
             destination: Cesium.Cartesian3.fromDegrees(
                 lon,
                 lat,
-                12000
+                15000
             )
         });
 
@@ -59,28 +63,27 @@ document.getElementById("locationBtn").onclick = function () {
 // Fullscreen
 document.getElementById("fullscreenBtn").onclick = function () {
 
-    if (!document.fullscreenElement) {
-
+    if (!document.fullscreenElement)
         document.documentElement.requestFullscreen();
-
-    } else {
-
+    else
         document.exitFullscreen();
-
-    }
 
 };
 
-// Earth button
+// Earth Button
 document.getElementById("earthBtn").onclick = function () {
 
     viewer.camera.flyHome(2);
 
 };
 
-// Search (placeholder)
+// Search (Demo)
 document.getElementById("searchBtn").onclick = function () {
 
-    alert("Search feature will require a geocoding service such as Nominatim or another provider.");
+    const q = document.getElementById("searchBox").value;
+
+    if (!q) return;
+
+    alert("Search: " + q + "\n\nPlace search requires a geocoding service.");
 
 };
