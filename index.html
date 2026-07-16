@@ -4,52 +4,41 @@
 <head>
 
 <meta charset="UTF-8">
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Deepak Dabi EV Repairing Course</title>
 
-<meta name="description" content="Basic To Advanced Electric Vehicle Repairing Course">
+<meta name="description" content="India's Best Electric Vehicle Repairing Course">
+
+<meta name="keywords" content="EV Repairing, Battery, BMS, BLDC Motor, Controller, Charger">
+
+<meta name="author" content="Deepak Dabi">
+
+<link rel="icon" href="images/logo.png">
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- ===========================
-PREMIUM INTRO
-=========================== -->
+<!-- Loading Screen -->
 
-<div id="intro-screen">
+<div id="loader">
 
-<div class="intro-content">
+<div class="loader-box">
 
-<img src="profile.jpg" class="intro-photo" alt="Deepak Dabi">
+<img src="images/logo.png" class="loader-logo">
 
-<div class="intro-logo">
+<h1>Deepak Dabi EV</h1>
 
-⚡
-
-</div>
-
-<h1>DEEPAK DABI</h1>
-
-<h2>EV REPAIRING COURSE</h2>
-
-<p>
-
-Basic To Advanced Electric Vehicle Technician Training
-
-</p>
-
-<div class="loading-box">
+<p>Loading Professional EV Academy...</p>
 
 <div class="loading-bar">
 
@@ -57,35 +46,43 @@ Basic To Advanced Electric Vehicle Technician Training
 
 </div>
 
-<span id="loading-text">
-
-Loading...0%
-
-</span>
-
 </div>
 
 </div>
 
-</div>
+<!-- Scroll Progress -->
 
-<!-- ===========================
-HEADER
-=========================== -->
+<div id="scrollProgress"></div>
+
+<!-- Header -->
 
 <header>
 
 <div class="logo">
 
-⚡ DEEPAK DABI EV REPAIRING COURSE
+<img src="images/logo.png">
+
+<span>Deepak Dabi EV</span>
 
 </div>
 
-<nav>
+<nav id="navMenu">
 
 <a href="index.html" class="active">Home</a>
 
 <a href="course.html">Course</a>
+
+<a href="battery.html">Battery</a>
+
+<a href="bms.html">BMS</a>
+
+<a href="motor.html">Motor</a>
+
+<a href="controller.html">Controller</a>
+
+<a href="charger.html">Charger</a>
+
+<a href="wiring.html">Wiring</a>
 
 <a href="quiz.html">Quiz</a>
 
@@ -97,35 +94,43 @@ HEADER
 
 </nav>
 
+<div class="header-icons">
+
+<button id="themeBtn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
+
 </header>
 
-<!-- ===========================
-HERO
-=========================== -->
+<!-- Hero -->
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-left">
+
+<h4>⚡ India's Professional EV Academy</h4>
 
 <h1>
 
-Become A Professional
+Learn EV Repairing
 
-<br>
-
-EV Technician
+Like a Professional
 
 </h1>
 
 <p>
 
-India's Practical Electric Vehicle Repairing Course
-
-Learn Battery, BMS, Motor, Controller,
-
-Charger, Wiring & Diagnostics
-
-With Workshop Level Training.
+Battery Repair • BMS Repair • Motor • Controller • Charger • Wiring • Diagnostics
 
 </p>
 
@@ -133,35 +138,75 @@ With Workshop Level Training.
 
 <a href="course.html" class="btn">
 
-🚀 Start Course
+Start Learning
 
 </a>
 
-<a href="#modules" class="btn">
+<a href="https://www.youtube.com/@DeepakDabiEV"
 
-📘 View Modules
+target="_blank"
+
+class="btn red">
+
+<i class="fab fa-youtube"></i>
+
+YouTube
 
 </a>
 
 </div>
+
+<div class="hero-stats">
+
+<div>
+
+<h2>25+</h2>
+
+<p>Modules</p>
+
+</div>
+
+<div>
+
+<h2>100+</h2>
+
+<p>Videos</p>
+
+</div>
+
+<div>
+
+<h2>1000+</h2>
+
+<p>MCQ</p>
+
+</div>
+
+<div>
+
+<h2>Free</h2>
+
+<p>Certificate</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero.png" id="heroImage">
 
 </div>
 
 </section>
 
-<!-- ===========================
-SEARCH
-=========================== -->
+<!-- Search -->
 
-<section>
+<section class="search-section">
 
-<h2>
-
-Search Course
-
-</h2>
-
-<center>
+<h2>Search Any EV Topic</h2>
 
 <input
 
@@ -169,282 +214,166 @@ type="text"
 
 id="search"
 
-placeholder="Search Battery, BMS, Motor..."
-
-style="width:90%;max-width:600px;padding:15px;border-radius:10px;border:none;font-size:18px;">
-
-</center>
+placeholder="Battery, BMS, Motor, Charger...">
 
 </section>
 
-<!-- ===========================
-MODULES START
-=========================== -->
+<!-- Course Section Starts -->
 
-<section id="modules">
+<section class="courses">
 
 <h2>
 
-Course Modules
+Professional Course Modules
 
 </h2>
 
-<div class="grid">
+<div class="course-grid">
   <!-- ===========================
-MODULE 1
+COURSE CARDS
 =========================== -->
 
-<div class="card">
+<div class="course-card">
 
-<h3>🔋 EV Battery</h3>
+<img src="images/battery.jpg" alt="Battery">
 
-<p>
+<h3>🔋 EV Battery Repair</h3>
 
-Lithium Battery
+<p>Lithium Battery Complete Repair Course</p>
 
-<br>
-
-Cell Testing
-
-<br>
-
-Battery Pack Repair
-
-<br>
-
-Charging Fault
-
-</p>
-
-<a href="battery.html" class="btn">
-
-Start Module
-
-</a>
+<a href="battery.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 2 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/bms.jpg" alt="BMS">
 
-<h3>⚡ BMS</h3>
+<h3>⚡ BMS Repair</h3>
 
-<p>
+<p>Battery Management System Complete Guide</p>
 
-Battery Management System
-
-<br>
-
-Cell Balancing
-
-<br>
-
-MOSFET Testing
-
-<br>
-
-Protection Circuit
-
-</p>
-
-<a href="bms.html" class="btn">
-
-Start Module
-
-</a>
+<a href="bms.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 3 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/motor.jpg" alt="Motor">
 
-<h3>⚙ Motor</h3>
+<h3>🛞 BLDC Motor</h3>
 
-<p>
+<p>Motor Repair, Hall Sensor & Testing</p>
 
-BLDC Motor
-
-<br>
-
-PMSM Motor
-
-<br>
-
-Hall Sensor
-
-<br>
-
-Motor Testing
-
-</p>
-
-<a href="motor.html" class="btn">
-
-Start Module
-
-</a>
+<a href="motor.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 4 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/controller.jpg" alt="Controller">
 
-<h3>🖥 Controller</h3>
+<h3>🖥 Controller Repair</h3>
 
-<p>
+<p>MOSFET, MCU & Controller Diagnosis</p>
 
-MCU
-
-<br>
-
-VCU
-
-<br>
-
-MOSFET
-
-<br>
-
-Throttle Signal
-
-</p>
-
-<a href="controller.html" class="btn">
-
-Start Module
-
-</a>
+<a href="controller.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 5 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/charger.jpg" alt="Charger">
 
-<h3>🔌 Charger</h3>
+<h3>🔌 Charger Repair</h3>
 
-<p>
+<p>SMPS, Charging Fault & Testing</p>
 
-AC To DC
-
-<br>
-
-SMPS
-
-<br>
-
-Charging Fault
-
-<br>
-
-Repair
-
-</p>
-
-<a href="charger.html" class="btn">
-
-Start Module
-
-</a>
+<a href="charger.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 6 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/wiring.jpg" alt="Wiring">
 
-<h3>📡 Wiring</h3>
+<h3>🔧 Wiring Diagram</h3>
 
-<p>
+<p>Complete EV Wiring & CAN Bus</p>
 
-CAN Bus
-
-<br>
-
-Connector Testing
-
-<br>
-
-Fuse
-
-<br>
-
-Relay
-
-</p>
-
-<a href="wiring.html" class="btn">
-
-Start Module
-
-</a>
+<a href="wiring.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 7 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/tools.jpg" alt="Tools">
+
+<h3>🧰 Workshop Tools</h3>
+
+<p>Professional EV Repair Tools</p>
+
+<a href="tools.html" class="btn">Start Module</a>
+
+</div>
+
+<div class="course-card">
+
+<img src="images/error.jpg" alt="Error">
 
 <h3>⚠ Error Codes</h3>
 
-<p>
+<p>All EV Error Codes Explained</p>
 
-DTC
-
-<br>
-
-Battery Errors
-
-<br>
-
-Controller Errors
-
-<br>
-
-Motor Errors
-
-</p>
-
-<a href="error-codes.html" class="btn">
-
-Start Module
-
-</a>
+<a href="error-codes.html" class="btn">Start Module</a>
 
 </div>
 
-<!-- MODULE 8 -->
+<div class="course-card">
 
-<div class="card">
+<img src="images/safety.jpg" alt="Safety">
 
-<h3>🛠 Workshop Tools</h3>
+<h3>🦺 Safety Training</h3>
 
-<p>
+<p>High Voltage Safety & PPE</p>
 
-Multimeter
+<a href="safety.html" class="btn">Start Module</a>
 
-<br>
+</div>
 
-Megger
+<div class="course-card">
 
-<br>
+<img src="images/diagnostic.jpg" alt="Diagnostic">
 
-Scanner
+<h3>📟 EV Diagnostics</h3>
 
-<br>
+<p>Scanner & Fault Finding</p>
 
-Safety Tools
+<a href="diagnostic.html" class="btn">Start Module</a>
 
-</p>
+</div>
 
-<a href="tools.html" class="btn">
+<div class="course-card">
 
-Start Module
+<img src="images/maintenance.jpg" alt="Maintenance">
 
-</a>
+<h3>🛠 EV Maintenance</h3>
+
+<p>Periodic Service & Inspection</p>
+
+<a href="maintenance.html" class="btn">Start Module</a>
+
+</div>
+
+<div class="course-card">
+
+<img src="images/quiz.jpg" alt="Quiz">
+
+<h3>📝 EV Quiz</h3>
+
+<p>1000+ MCQ Practice Questions</p>
+
+<a href="quiz.html" class="btn">Start Quiz</a>
 
 </div>
 
@@ -453,129 +382,135 @@ Start Module
 </section>
 
 <!-- ===========================
-WHY CHOOSE US
+FEATURES SECTION
 =========================== -->
 
-<section>
+<section class="features">
 
-<h2>
+<h2>Why Choose Deepak Dabi EV Academy?</h2>
 
-Why Learn With Us?
+<div class="feature-grid">
 
-</h2>
+<div class="feature-box">
+<h3>🎥 HD Video Classes</h3>
+<p>Easy to understand practical EV repair videos.</p>
+</div>
 
-<div class="grid">
+<div class="feature-box">
+<h3>📄 PDF Notes</h3>
+<p>Downloadable study notes for every module.</p>
+</div>
 
-<div class="card">
+<div class="feature-box">
+<h3>🏆 Certificate</h3>
+<p>Generate your course completion certificate.</p>
+</div>
 
-<h3>
-
-🎓 Practical Training
-
-</h3>
-
-<p>
-
-Real Workshop Based EV Repairing Course.
-
-</p>
+<div class="feature-box">
+<h3>📱 Mobile Friendly</h3>
+<p>Learn anytime on Android, iPhone or PC.</p>
+</div>
 
 </div>
 
-<div class="card">
-
-<h3>
-
-📘 Complete Notes
-
-</h3>
-
-<p>
-
-Battery, BMS, Motor,
-Controller,
-Charger &
-Wiring Notes.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-📝 Practice Quiz
-
-</h3>
-
-<p>
-
-Test Your Knowledge
-After Every Module.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3
-  <!-- ===========================
-CONTACT
+</section>
+<!-- ===========================
+YOUTUBE SECTION
 =========================== -->
 
-<section>
+<section class="youtube-section">
 
-<h2>Contact Us</h2>
+<div class="section-title">
 
-<div class="grid">
+<h2>🎥 Latest EV Repair Videos</h2>
 
-<div class="card">
-
-<h3>👨‍🔧 Trainer</h3>
-
-<p>
-
-Deepak Dabi
-
-</p>
+<p>Latest videos from Deepak Dabi EV YouTube Channel</p>
 
 </div>
 
-<div class="card">
+<div id="youtubeVideos" class="video-grid">
 
-<h3>📧 Email</h3>
+<div class="loading">
 
-<p>
-
-DABIDEEPAK6@GMAIL.COM
-
-</p>
+<h3>Loading Latest Videos...</h3>
 
 </div>
 
-<div class="card">
+</div>
 
-<h3>📱 Mobile</h3>
+<div class="youtube-button">
 
-<p>
+<a href="https://www.youtube.com/@DeepakDabiEV"
 
-9521393991
+target="_blank"
 
-</p>
+class="btn youtube-btn">
+
+<i class="fab fa-youtube"></i>
+
+Subscribe YouTube Channel
+
+</a>
 
 </div>
 
-<div class="card">
+</section>
 
-<h3>🌐 Website</h3>
+<!-- ===========================
+LIVE STATISTICS
+=========================== -->
 
-<p>
+<section class="statistics">
 
-Deepak Dabi EV Repairing Course
+<h2>📊 Academy Statistics</h2>
 
-</p>
+<div class="stats-grid">
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="25">0</h1>
+
+<p>Course Modules</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="100">0</h1>
+
+<p>Video Lessons</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="1000">0</h1>
+
+<p>MCQ Questions</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="5000">0</h1>
+
+<p>Students</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="100">0</h1>
+
+<p>Practical Topics</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1 class="counter" data-target="24">0</h1>
+
+<p>Hours Support</p>
 
 </div>
 
@@ -584,80 +519,596 @@ Deepak Dabi EV Repairing Course
 </section>
 
 <!-- ===========================
-FOOTER
+LEARNING ROADMAP
 =========================== -->
 
-<footer>
+<section class="roadmap">
 
-<p>
+<h2>🛣 EV Learning Roadmap</h2>
 
-© 2026 Deepak Dabi EV Repairing Course
+<div class="roadmap-box">
+
+<div class="step">
+
+<div class="number">1</div>
+
+<h3>EV Basics</h3>
+
+<p>Electric Vehicle Introduction</p>
+
+</div>
+
+<div class="step">
+
+<div class="number">2</div>
+
+<h3>Battery</h3>
+
+<p>Battery Repair & Testing</p>
+
+</div>
+
+<div class="step">
+
+<div class="number">3</div>
+
+<h3>BMS</h3>
+
+<p>Battery Management System</p>
+
+</div>
+
+<div class="step">
+
+<div class="number">4</div>
+
+<h3>Motor</h3>
+
+<p>BLDC Motor Complete Repair</p>
+
+</div>
+
+<div class="step">
+
+<div class="number">5</div>
+
+<h3>Controller</h3>
+
+<p>Controller Diagnosis</p>
+
+</div>
+
+<div class="step">
+
+<div class="number">6</div>
+
+<h3>Workshop</h3>
+
+<p>Professional EV Technician</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+TOPICS
+=========================== -->
+
+<section class="topics">
+
+<h2>🔥 Popular Topics</h2>
+
+<div class="topic-grid">
+
+<span>🔋 Lithium Battery</span>
+
+<span>⚡ BMS</span>
+
+<span>🛞 BLDC Motor</span>
+
+<span>🖥 Controller</span>
+
+<span>🔌 Charger</span>
+
+<span>🔧 Wiring</span>
+
+<span>📡 CAN Bus</span>
+
+<span>🧰 Workshop Tools</span>
+
+<span>⚠ Error Codes</span>
+
+<span>📟 Diagnostics</span>
+
+<span>🛠 Service</span>
+
+<span>🏆 Certification</span>
+
+</div>
+
+</section>
+
+<!-- ===========================
+TESTIMONIALS
+=========================== -->
+
+<section class="testimonials">
+
+<h2>⭐ Student Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<h3>Professional Course</h3>
+
+<p>Very easy to understand practical EV repairing course.</p>
+
+</div>
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<h3>Best EV Academy</h3>
+
+<p>Battery and BMS modules are explained perfectly.</p>
+
+</div>
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<h3>Excellent Videos</h3>
+
+<p>High quality videos and practical learning experience.</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+EV GALLERY
+========================================== -->
+
+<section class="gallery">
+
+<h2>📸 EV Workshop Gallery</h2>
+
+<p>Professional Electric Vehicle Repair Training</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/gallery1.jpg" alt="Battery Repair">
+</div>
+
+<div class="gallery-item">
+<img src="images/gallery2.jpg" alt="BMS">
+</div>
+
+<div class="gallery-item">
+<img src="images/gallery3.jpg" alt="Motor">
+</div>
+
+<div class="gallery-item">
+<img src="images/gallery4.jpg" alt="Controller">
+</div>
+
+<div class="gallery-item">
+<img src="images/gallery5.jpg" alt="Charging">
+</div>
+
+<div class="gallery-item">
+<img src="images/gallery6.jpg" alt="Workshop">
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+CERTIFICATE
+========================================== -->
+
+<section class="certificate-preview">
+
+<h2>🏆 Course Certificate</h2>
+
+<p>Complete the EV Repairing Course and download your certificate.</p>
+
+<img src="images/certificate-preview.jpg"
+class="certificate-image"
+alt="Certificate">
 
 <br><br>
 
-Learn • Repair • Grow
+<a href="certificate.html" class="btn">
+
+Download Certificate
+
+</a>
+
+</section>
+
+<!-- ==========================================
+PDF NOTES
+========================================== -->
+
+<section class="notes">
+
+<h2>📚 Study Notes</h2>
+
+<div class="notes-grid">
+
+<div class="note-card">
+
+<h3>🔋 Battery Notes</h3>
+
+<p>Complete Battery PDF</p>
+
+<a href="pdf/battery.pdf" class="btn" target="_blank">
+
+Open PDF
+
+</a>
+
+</div>
+
+<div class="note-card">
+
+<h3>⚡ BMS Notes</h3>
+
+<p>BMS Repair Guide</p>
+
+<a href="pdf/bms.pdf" class="btn" target="_blank">
+
+Open PDF
+
+</a>
+
+</div>
+
+<div class="note-card">
+
+<h3>🛞 Motor Notes</h3>
+
+<p>Motor Complete Guide</p>
+
+<a href="pdf/motor.pdf" class="btn" target="_blank">
+
+Open PDF
+
+</a>
+
+</div>
+
+<div class="note-card">
+
+<h3>🔌 Charger Notes</h3>
+
+<p>SMPS Charger Repair</p>
+
+<a href="pdf/charger.pdf" class="btn" target="_blank">
+
+Open PDF
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+FAQ
+========================================== -->
+
+<section class="faq">
+
+<h2>❓ Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<h3>क्या यह Course बिल्कुल Free है?</h3>
+
+<p>हाँ, वेबसाइट पर उपलब्ध सामग्री मुफ्त में पढ़ सकते हैं।</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>क्या Certificate मिलेगा?</h3>
+
+<p>हाँ, Course Complete करने के बाद Certificate Page से प्राप्त कर सकते हैं।</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>क्या Mobile पर चलेगा?</h3>
+
+<p>हाँ, Android, iPhone और Computer सभी पर चलेगा।</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>क्या YouTube Videos भी मिलेंगे?</h3>
+
+<p>हाँ, आपके Deepak Dabi EV YouTube Channel के Latest Videos यहाँ दिखेंगे।</p>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+CONTACT CTA
+========================================== -->
+
+<section class="contact-banner">
+
+<h2>Need EV Repairing Help?</h2>
+
+<p>Contact Deepak Dabi EV Academy</p>
+
+<div class="hero-buttons">
+
+<a href="contact.html" class="btn">
+
+Contact Us
+
+</a>
+
+<a href="https://www.youtube.com/@DeepakDabiEV"
+
+target="_blank"
+
+class="btn red">
+
+YouTube Channel
+
+</a>
+
+</div>
+
+</section>
+<!-- ==========================================
+CONTACT SECTION
+========================================== -->
+
+<section class="contact">
+
+<h2>📞 Contact Deepak Dabi EV</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<i class="fas fa-phone"></i>
+
+<h3>Call</h3>
+
+<p>+91 95213 93991</p>
+
+<a href="tel:+919521393991" class="btn">
+Call Now
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fas fa-envelope"></i>
+
+<h3>Email</h3>
+
+<p>dabideepak6@gmail.com</p>
+
+<a href="mailto:dabideepak6@gmail.com" class="btn">
+Send Mail
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fab fa-youtube"></i>
+
+<h3>YouTube</h3>
+
+<p>@DeepakDabiEV</p>
+
+<a href="https://www.youtube.com/@DeepakDabiEV"
+target="_blank"
+class="btn red">
+
+Open Channel
+
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fab fa-whatsapp"></i>
+
+<h3>WhatsApp</h3>
+
+<p>Chat with Us</p>
+
+<a href="https://wa.me/919521393991"
+target="_blank"
+class="btn green">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+GOOGLE MAP
+========================================== -->
+
+<section class="map">
+
+<h2>📍 Our Location</h2>
+
+<iframe
+
+src="https://www.google.com/maps?q=Jodhpur,Rajasthan&output=embed"
+
+width="100%"
+
+height="450"
+
+style="border:0;border-radius:20px;"
+
+loading="lazy">
+
+</iframe>
+
+</section>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>Deepak Dabi EV</h2>
+
+<p>
+
+India's Professional EV Repairing Learning Platform.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a><br>
+
+<a href="course.html">Course</a><br>
+
+<a href="quiz.html">Quiz</a><br>
+
+<a href="certificate.html">Certificate</a>
+
+</div>
+
+<div>
+
+<h3>Training</h3>
+
+<a href="battery.html">Battery</a><br>
+
+<a href="bms.html">BMS</a><br>
+
+<a href="motor.html">Motor</a><br>
+
+<a href="controller.html">Controller</a>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<a href="https://www.youtube.com/@DeepakDabiEV" target="_blank">
+
+<i class="fab fa-youtube"></i>
+
+YouTube
+
+</a>
+
+<br>
+
+<a href="https://wa.me/919521393991" target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+<br>
+
+<a href="mailto:dabideepak6@gmail.com">
+
+<i class="fas fa-envelope"></i>
+
+Email
+
+</a>
+
+</div>
+
+</div>
+
+<hr>
+
+<p style="text-align:center;margin-top:20px;">
+
+© 2026 Deepak Dabi EV Repairing Course
+
+<br>
+
+Designed By Deepak Dabi
 
 </p>
 
 </footer>
 
-<!-- ===========================
-INTRO LOADING SCRIPT
-=========================== -->
+<!-- Floating Buttons -->
 
-<script>
+<a href="https://wa.me/919521393991"
 
-let progress = 0;
+class="floating-whatsapp"
 
-const bar = document.getElementById("loading-progress");
+target="_blank">
 
-const text = document.getElementById("loading-text");
+💬
 
-const intro = document.getElementById("intro-screen");
+</a>
 
-const timer = setInterval(() => {
+<a href="https://www.youtube.com/@DeepakDabiEV"
 
-progress++;
+class="floating-youtube"
 
-if(bar){
+target="_blank">
 
-bar.style.width = progress + "%";
+▶
 
-}
+</a>
 
-if(text){
+<button id="topBtn">
 
-text.innerHTML = "Loading... " + progress + "%";
+⬆
 
-}
+</button>
 
-if(progress >= 100){
-
-clearInterval(timer);
-
-setTimeout(() => {
-
-if(intro){
-
-intro.style.opacity = "0";
-
-intro.style.transition = "1s";
-
-setTimeout(() => {
-
-intro.style.display = "none";
-
-},1000);
-
-}
-
-},500);
-
-}
-
-},40);
-
-</script>
+<!-- Scripts -->
 
 <script src="script.js"></script>
 
