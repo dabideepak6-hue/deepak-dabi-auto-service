@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Deepak Dabi EV Repairing Course</title>
 
+<meta name="description" content="Basic To Advanced Electric Vehicle Repairing Course">
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+<!-- ===========================
+PREMIUM INTRO
+=========================== -->
+
+<div id="intro-screen">
+
+<div class="intro-content">
+
+<img src="profile.jpg" class="intro-photo" alt="Deepak Dabi">
+
+<div class="intro-logo">
+
+⚡
+
+</div>
+
+<h1>DEEPAK DABI</h1>
+
+<h2>EV REPAIRING COURSE</h2>
+
+<p>
+
+Basic To Advanced Electric Vehicle Technician Training
+
+</p>
+
+<div class="loading-box">
+
+<div class="loading-bar">
+
+<div id="loading-progress"></div>
+
+</div>
+
+<span id="loading-text">
+
+Loading...0%
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===========================
+HEADER
+=========================== -->
+
 <header>
 
 <div class="logo">
-⚡ DEEPAK DABI EV
+
+⚡ DEEPAK DABI EV REPAIRING COURSE
+
 </div>
 
 <nav>
 
-<a href="index.html">Home</a>
+<a href="index.html" class="active">Home</a>
 
 <a href="course.html">Course</a>
 
@@ -36,59 +99,132 @@
 
 </header>
 
+<!-- ===========================
+HERO
+=========================== -->
 
 <section class="hero">
 
 <div class="hero-content">
 
 <h1>
-Deepak Dabi EV Repairing Course
+
+Become A Professional
+
+<br>
+
+EV Technician
+
 </h1>
 
 <p>
 
-India's Professional Electric Vehicle Repair Training
+India's Practical Electric Vehicle Repairing Course
 
-Battery • BMS • Motor • Controller • Charger • Wiring
+Learn Battery, BMS, Motor, Controller,
+
+Charger, Wiring & Diagnostics
+
+With Workshop Level Training.
 
 </p>
 
-<br>
+<div class="hero-buttons">
 
 <a href="course.html" class="btn">
 
-🚀 Start Learning
+🚀 Start Course
+
+</a>
+
+<a href="#modules" class="btn">
+
+📘 View Modules
 
 </a>
 
 </div>
 
+</div>
+
 </section>
 
-
+<!-- ===========================
+SEARCH
+=========================== -->
 
 <section>
 
-<h2>What You Will Learn</h2>
+<h2>
+
+Search Course
+
+</h2>
+
+<center>
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Battery, BMS, Motor..."
+
+style="width:90%;max-width:600px;padding:15px;border-radius:10px;border:none;font-size:18px;">
+
+</center>
+
+</section>
+
+<!-- ===========================
+MODULES START
+=========================== -->
+
+<section id="modules">
+
+<h2>
+
+Course Modules
+
+</h2>
 
 <div class="grid">
+  <!-- ===========================
+MODULE 1
+=========================== -->
 
 <div class="card">
 
-<h3>🔋 Battery</h3>
+<h3>🔋 EV Battery</h3>
 
 <p>
 
 Lithium Battery
 
+<br>
+
 Cell Testing
+
+<br>
 
 Battery Pack Repair
 
+<br>
+
+Charging Fault
+
 </p>
+
+<a href="battery.html" class="btn">
+
+Start Module
+
+</a>
 
 </div>
 
+<!-- MODULE 2 -->
 
 <div class="card">
 
@@ -96,16 +232,31 @@ Battery Pack Repair
 
 <p>
 
-MOSFET
+Battery Management System
 
-Balancing
+<br>
+
+Cell Balancing
+
+<br>
+
+MOSFET Testing
+
+<br>
 
 Protection Circuit
 
 </p>
 
+<a href="bms.html" class="btn">
+
+Start Module
+
+</a>
+
 </div>
 
+<!-- MODULE 3 -->
 
 <div class="card">
 
@@ -113,16 +264,31 @@ Protection Circuit
 
 <p>
 
-BLDC
+BLDC Motor
 
-PMSM
+<br>
+
+PMSM Motor
+
+<br>
 
 Hall Sensor
 
+<br>
+
+Motor Testing
+
 </p>
+
+<a href="motor.html" class="btn">
+
+Start Module
+
+</a>
 
 </div>
 
+<!-- MODULE 4 -->
 
 <div class="card">
 
@@ -130,36 +296,187 @@ Hall Sensor
 
 <p>
 
-VCU
-
 MCU
 
-Throttle
+<br>
+
+VCU
+
+<br>
+
+MOSFET
+
+<br>
+
+Throttle Signal
 
 </p>
 
+<a href="controller.html" class="btn">
+
+Start Module
+
+</a>
+
 </div>
 
+<!-- MODULE 5 -->
+
+<div class="card">
+
+<h3>🔌 Charger</h3>
+
+<p>
+
+AC To DC
+
+<br>
+
+SMPS
+
+<br>
+
+Charging Fault
+
+<br>
+
+Repair
+
+</p>
+
+<a href="charger.html" class="btn">
+
+Start Module
+
+</a>
+
+</div>
+
+<!-- MODULE 6 -->
+
+<div class="card">
+
+<h3>📡 Wiring</h3>
+
+<p>
+
+CAN Bus
+
+<br>
+
+Connector Testing
+
+<br>
+
+Fuse
+
+<br>
+
+Relay
+
+</p>
+
+<a href="wiring.html" class="btn">
+
+Start Module
+
+</a>
+
+</div>
+
+<!-- MODULE 7 -->
+
+<div class="card">
+
+<h3>⚠ Error Codes</h3>
+
+<p>
+
+DTC
+
+<br>
+
+Battery Errors
+
+<br>
+
+Controller Errors
+
+<br>
+
+Motor Errors
+
+</p>
+
+<a href="error-codes.html" class="btn">
+
+Start Module
+
+</a>
+
+</div>
+
+<!-- MODULE 8 -->
+
+<div class="card">
+
+<h3>🛠 Workshop Tools</h3>
+
+<p>
+
+Multimeter
+
+<br>
+
+Megger
+
+<br>
+
+Scanner
+
+<br>
+
+Safety Tools
+
+</p>
+
+<a href="tools.html" class="btn">
+
+Start Module
+
+</a>
+
+</div>
 
 </div>
 
 </section>
 
-
+<!-- ===========================
+WHY CHOOSE US
+=========================== -->
 
 <section>
 
-<h2>Why Choose This Course?</h2>
+<h2>
+
+Why Learn With Us?
+
+</h2>
 
 <div class="grid">
 
 <div class="card">
 
-<h3>📘 Easy Notes</h3>
+<h3>
+
+🎓 Practical Training
+
+</h3>
 
 <p>
 
-Simple Hindi Language
+Real Workshop Based EV Repairing Course.
 
 </p>
 
@@ -167,11 +484,18 @@ Simple Hindi Language
 
 <div class="card">
 
-<h3>🛠 Practical Training</h3>
+<h3>
+
+📘 Complete Notes
+
+</h3>
 
 <p>
 
-Real Workshop Experience
+Battery, BMS, Motor,
+Controller,
+Charger &
+Wiring Notes.
 
 </p>
 
@@ -179,11 +503,16 @@ Real Workshop Experience
 
 <div class="card">
 
-<h3>🎓 Certificate</h3>
+<h3>
+
+📝 Practice Quiz
+
+</h3>
 
 <p>
 
-Complete Quiz & Download Certificate
+Test Your Knowledge
+After Every Module.
 
 </p>
 
@@ -191,11 +520,60 @@ Complete Quiz & Download Certificate
 
 <div class="card">
 
-<h3>📱 Mobile Friendly</h3>
+<h3
+  <!-- ===========================
+CONTACT
+=========================== -->
+
+<section>
+
+<h2>Contact Us</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>👨‍🔧 Trainer</h3>
 
 <p>
 
-Works on Mobile & Laptop
+Deepak Dabi
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📧 Email</h3>
+
+<p>
+
+DABIDEEPAK6@GMAIL.COM
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📱 Mobile</h3>
+
+<p>
+
+9521393991
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌐 Website</h3>
+
+<p>
+
+Deepak Dabi EV Repairing Course
 
 </p>
 
@@ -205,7 +583,9 @@ Works on Mobile & Laptop
 
 </section>
 
-
+<!-- ===========================
+FOOTER
+=========================== -->
 
 <footer>
 
@@ -213,11 +593,74 @@ Works on Mobile & Laptop
 
 © 2026 Deepak Dabi EV Repairing Course
 
+<br><br>
+
+Learn • Repair • Grow
+
 </p>
 
 </footer>
 
+<!-- ===========================
+INTRO LOADING SCRIPT
+=========================== -->
+
+<script>
+
+let progress = 0;
+
+const bar = document.getElementById("loading-progress");
+
+const text = document.getElementById("loading-text");
+
+const intro = document.getElementById("intro-screen");
+
+const timer = setInterval(() => {
+
+progress++;
+
+if(bar){
+
+bar.style.width = progress + "%";
+
+}
+
+if(text){
+
+text.innerHTML = "Loading... " + progress + "%";
+
+}
+
+if(progress >= 100){
+
+clearInterval(timer);
+
+setTimeout(() => {
+
+if(intro){
+
+intro.style.opacity = "0";
+
+intro.style.transition = "1s";
+
+setTimeout(() => {
+
+intro.style.display = "none";
+
+},1000);
+
+}
+
+},500);
+
+}
+
+},40);
+
+</script>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
